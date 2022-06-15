@@ -1,0 +1,49 @@
+{
+    "LB.SEARCH.TU_KHOA":"Từ khoá",
+    "LB.SEARCH.TIM_KIEM":"Tìm kiếm",
+    "LB.SEARCH.TIM_KIEM_NANG_CAO":"Tìm kiếm nâng cao",
+    "LB.SEARCH.TIM_KIEM_NHANH":"Tìm kiếm nhanh",
+    "LB.SEARCH.LAM_MOI":"Làm mới",
+
+    "LB.GRID.CHINH_SUA":"Chỉnh sửa",
+    "LB.GRID.XEM":"Xem",
+    "LB.GRID.THEM_MOI":"Thêm mới",
+    "LB.GRID.XOA":"Xoá",
+    "LB.GRID.NAME":"Tên",
+    "LB.GRID.ENG_NAME":"Tên tiếng anh",
+    "LB.GRID.STATUS":"Trạng thái",
+    "LB.GRID.TYPE":"Loại",
+    "LB.GRID.RN":"STT",
+    "LB.GRID.INFO":"Thông tin chi tiết",
+
+    "LB.ACTION.SAVE":"Lưu",
+    "LB.ACTION.CANCEL":"Huỷ",
+
+
+    "MES.ACTION.DEL_TITLE":"Xác nhận xoá",
+    "MES.ACTION.ADD_SUCCESS":"Thêm mới thành công",
+    "MES.ACTION.UPDATE_SUCCESS":"Cập nhật thành công",
+    "MES.ACTION.DEL_SUCCESS":"Xoá thành công",
+    "MES.ACTION.DEL_FAIL":"Xoá không thành công",
+    "MES.ACTION.DEL_CONFIRM":"Bạn có chắc chắn muốn xóa?",
+
+    "LB.MST.DB.DD_HOC_SINH":"Điểm danh học sinh",
+    "LB.MST.DB.DS_LOP":"Danh sách lớp",
+    "LB.MST.DB.DS_HOC_SINH":"Danh sách học sinh",
+    "LB.MST.DB.TT_HOC_SINH":"Thông tin học sinh",
+    "LB.MST.CL.CO_SO":"Cơ sở",
+    "LB.MST.CL.LOP":"Lớp",
+    "LB.MST.CL.NAME":"Tên tiếng việt",
+    "LB.MST.CL.ENAME":"Tên tiếng anh",
+    "LB.MST.CL.NIEN_KHOA":"Niên khoá",
+    "LB.MST.DB.FIRST_NAME":"Tên",
+    "LB.MST.DB.LAST_NAME":"Họ",
+    "LB.MST.DB.DOF":"Ngày sinh",
+    "LB.MST.DB.UNAME":"Tên tài khoản",
+
+    "LB.CAT.NGANH_HANG":"Ngành hàng",
+    "LB.CAT.NAME":"Tên",
+    "LB.CAT.DES":"Mô tả",
+    "LB.CAT.NOTE":"Ghi chú",
+    "LB.CAT.INDEX":"Số thứ tự"
+}

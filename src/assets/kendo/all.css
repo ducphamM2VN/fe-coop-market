@@ -1,0 +1,68 @@
+.k-dialog-titlebar {
+    border-color           : inherit;
+    color                  : #ffffff;
+    background             : linear-gradient(to right, #3a7bd5, #3a6073);
+    border-top-left-radius : 10px;
+    border-top-right-radius: 10px;
+}
+
+.k-in {
+    width        : 100% !important;
+    padding-right: 0px;
+}
+
+.k-grid-header .k-header {
+    font-weight: bold;
+}
+
+kendo-window.k-widget.k-window.ng-star-inserted {
+    z-index: 999 !important;
+}
+
+.k-overlay.ng-star-inserted {
+    z-index: 998 !important;
+
+}
+
+kendo-window.k-widget.k-window.ng-star-inserted {
+    border-radius: 10px;
+}
+.k-icon.k-plus{
+    text-decoration: none;
+}
+.k-icon.k-plus:before {
+    font-family: FontAwesome;
+    content: '\f0da';
+}
+.k-icon.k-minus{
+    text-decoration: none;
+}
+.k-icon.k-minus:before {
+    font-family: FontAwesome;
+    content: '\f0d7';
+}
+td.k-detail-cell {
+    background: #FAFAFA;
+}
+td.k-hierarchy-cell {
+    background: #FAFAFA;
+}
+span.select2-selection.select2-selection--single {
+    height: 40px !important;
+    background-color: #f7f9fc;
+    border-color: #e4e9f2;
+    font-weight:bold;
+}
+span.select2-selection.select2-selection--multiple {
+    height: 30px !important;
+    background-color: #f7f9fc;
+    border-color: #e4e9f2;
+    font-weight:bold;
+}
+.select2-selection__rendered {
+    line-height: 40px !important;
+    height: 40px !important;
+}   
+.select2-selection__arrow {
+    height: 40px !important;
+}
