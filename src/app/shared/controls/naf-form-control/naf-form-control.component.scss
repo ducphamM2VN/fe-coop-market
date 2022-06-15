@@ -1,0 +1,20 @@
+.w-full {
+    width: 100%;
+}
+
+.note {
+    font-family: "Roboto", Arial, sans-serif;
+    white-space: pre-line;
+    max-width: 800px;
+}
+:host {
+    display: block;
+    padding-bottom: 5rem;
+  }
+:host ::ng-deep {
+    .control__ckeditor {
+        .cke_reset {
+            box-shadow: unset !important;
+        }
+    }
+}

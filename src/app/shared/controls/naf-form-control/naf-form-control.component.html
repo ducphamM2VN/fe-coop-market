@@ -1,0 +1,116 @@
+<ng-container *ngIf="label; else notLabel">
+    <ng-container *ngIf="mode === 'vertical'">
+        <div class="form-group">
+            <label *ngIf="type === 'checkbox'; else notLabeltmpl" class="d-none"></label>
+            <ng-container *ngIf="note">
+                <span [nbPopover]="noteTpl">
+                    <span class="text-danger font-weight-bold"> ( i )</span>
+                </span>
+                <ng-template #noteTpl>
+                    <pre class="note">
+                    {{ note }}
+                    </pre>
+                </ng-template>
+            </ng-container>
+            <ng-container [ngTemplateOutlet]="controlTmpl"></ng-container>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="mode === 'horizontal'">
+        <div class="form-group row">
+            <label class="col-4"
+                   [ngClass]="leftCol">{{ type === 'checkbox' ? '' : label }}</label>
+            <div class="col-8"
+                 [ngClass]="rightCol">
+                <ng-container [ngTemplateOutlet]="controlTmpl"></ng-container>
+                <span class="control-validator"></span>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>
+<ng-template #notLabel>
+    <ng-container [ngTemplateOutlet]="controlTmpl"></ng-container>
+    <span class="control-validator"></span>
+</ng-template>
+
+<ng-template #notLabeltmpl>
+    <label>{{label}}</label>
+</ng-template>
+
+<ng-template #controlTmpl>
+    <ng-container [ngSwitch]="type">
+        <ng-container *ngSwitchCase="'input'">
+            <input type="text"
+                   nbInput 
+                   fullWidth
+                   [disabled]="isDisabled"
+                   [placeholder]="placeHolder"
+                   (change)="onInputChange($event)"
+                   [(ngModel)]="inputValue"/>
+        </ng-container>
+        <ng-container *ngSwitchCase="'color'">
+            <input type="color"
+                   nbInput
+                   fullWidth
+                   [disabled]="isDisabled"
+                   [placeholder]="placeHolder"
+                   (change)="onInputChange($event)"
+                   [(ngModel)]="inputValue"/>
+        </ng-container>
+        <ng-container *ngSwitchCase="'password'">
+            <input type="password"
+                   nbInput
+                   fullWidth
+                   (change)="onInputChange($event)"
+                   [placeholder]="placeHolder"
+                   [disabled]="isDisabled"
+                   [(ngModel)]="inputValue"/>
+        </ng-container>
+        <ng-container *ngSwitchCase="'textarea'">
+            <textarea (change)="onInputChange($event)"
+                      fullWidth
+                      [(ngModel)]="inputValue"
+                      [placeholder]="placeHolder"
+                      [disabled]="isDisabled"
+                      [rows]="rows"></textarea>
+        </ng-container>
+        <ng-container *ngSwitchCase="'ckeditor'">
+            <ckeditor class="control__ckeditor" 
+                      [config]="ckConfig" 
+                      [(ngModel)]="inputValue" 
+                      (ngModelChange)="onModelChange($event)">
+            </ckeditor>
+        </ng-container>
+        <ng-container *ngSwitchCase="'checkbox'">
+            <div class="m-checkbox-inline">
+                <label class="m-checkbox">
+                    <input type="checkbox"
+                           fullWidth
+                           class="m-input form-control"
+                           (ngModelChange)="onModelChange($event)"
+                           [disabled]="isDisabled"
+                           [(ngModel)]="inputValue"/>
+                    {{ label }}
+                    <span></span>
+                </label>
+            </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="'number'">
+            <input nbInput 
+                   type="number" 
+                   [(ngModel)]="inputValue"
+                   (ngModelChange)="onModelChange($event)" 
+                   [disabled]="isDisabled"
+                   fullWidth
+                   nullValue/>
+        </ng-container>
+        <ng-container *ngSwitchCase="'date'">
+            <input nbInput
+               [placeholder]="placeHolder"
+               (ngModelChange)="onModelChange($event)"
+               [nbDatepicker]="formpicker"
+               [disabled]="isDisabled"
+               fullWidth>
+            <nb-datepicker #formpicker format="dd/MM/yyyy"></nb-datepicker>
+        </ng-container>
+    </ng-container>
+</ng-template>
