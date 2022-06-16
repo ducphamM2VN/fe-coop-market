@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: selt-hosted
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -21,7 +21,7 @@ jobs:
         node-version: 14
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci
 
     - name: Build
       run: npm run build
