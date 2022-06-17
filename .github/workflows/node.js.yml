@@ -21,6 +21,8 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Remove dependencies
+    - name: Install Remove dependencies
       run: npm install rimraf -g
+
+    - name: Install Remove dependencies
       run: rimraf node_modules
