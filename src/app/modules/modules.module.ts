@@ -5,9 +5,11 @@ import { HttpInterceptorProviders } from '../shared/utils/interceptors';
 import { CustomTranslateService } from '../shared/services/custom-translate.service';
 import { ModulesComponent } from './modules.component';
 import { BaseContextModule } from '../shared/base/base-context.module';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     BaseContextModule,
+   
   ],
   providers   : [
     getAppConfigProvider(environment),

@@ -38,7 +38,7 @@ export class CustomTranslateService {
     }
 
     get(key: string): string {
-        const currentLang = this.translate.currentLang; // get current language
+        const currentLang = this.translate.currentLang || 'vi'; // get current language
         const returnValue = this.translate.translations[currentLang][key]; // get converted string from current language
         if (returnValue === undefined) {
           return this.translate.translations.en_merch[key]; // if value is getting undefined then return default language string, en_merch is default english language file here

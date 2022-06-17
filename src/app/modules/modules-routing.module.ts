@@ -12,6 +12,11 @@ const routes: Routes = [{
         .then(m => m.ModuleCategoriesModule),
     },
     {
+      path: 'module-canhans',
+      loadChildren: () => import('./module-canhans/module-canhans.module')
+        .then(m => m.ModuleCaNhansModule),
+    },
+    {
       path: '',
       redirectTo: 'module-categories',
       pathMatch: 'full',
