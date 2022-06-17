@@ -8,8 +8,6 @@ import { ModulesCaNhansComponent } from './module-canhans.component';
     imports: [
         ModuleCaNhansRoutingModule,
         BaseContextModule,
-        
-        
     ],
     declarations: [
         ModulesCaNhansComponent,

@@ -22,13 +22,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ]
   },
   {
-    title: 'Cá nhân',
-    icon: 'book-outline',
+    title: 'Khách hàng Cá nhân',
+    icon: 'people-outline',
     home: true,
     children: [
       {
-        title: 'Cá nhân',
-        icon: 'archive-outline',
+        title: 'Quản lý thông tin đăng ký',
+        icon: 'monitor-outline',
         link: '/modules/module-canhans/ca-nhan',
       },
     ]

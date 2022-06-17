@@ -17,9 +17,9 @@ export class ComponentCaNhanComponent extends BaseCaNhansListComponent<ICaNhans>
     @Input() isChild: boolean;
     urlRouterItem: string = UrlModuleCaNhans.ROUTE_CANHANS.CA_NHAN;
     gridData = dataExample
-    
+
     private get extendQueryOptions() {
-       
+
         return {
             ...this.queryOptions,
         };
@@ -39,7 +39,7 @@ export class ComponentCaNhanComponent extends BaseCaNhansListComponent<ICaNhans>
         //     ...this.extendQueryOptions
         // });
     }
-    
+
     addHandler() {
         this.model = null;
         this.action = ActionEnum.CREATE;
@@ -60,12 +60,13 @@ export class ComponentCaNhanComponent extends BaseCaNhansListComponent<ICaNhans>
           height:700,
           top: 100,
           autoFocusedElement: 'body',
-          
+
       });
+      console.log(this.isInfoOpen)
+      console.log(this.model)
       const param = windowRef.content.instance;
       param.action = this.action;
       param.model = this.model;
-
       windowRef.result.subscribe(result => {
           if (result instanceof WindowCloseResult) {
               this.opened = false;

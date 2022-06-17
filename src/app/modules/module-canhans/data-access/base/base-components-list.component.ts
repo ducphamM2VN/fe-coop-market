@@ -40,12 +40,13 @@ export abstract class BaseCaNhansListComponent<T> extends BaseListComponent<T> {
     urlApi: string;
     colNameDefineClass: string='col-12 col-lg-12 col-md-12';
     isInfoOpen:boolean = false;
+    infoModel: T | null;
 
     protected get body() {
-        
+
         return {
             ...this.queryOptions
-           
+
         };
     }
 
@@ -131,6 +132,7 @@ export abstract class BaseCaNhansListComponent<T> extends BaseListComponent<T> {
     selectedRowChange(e: SelectionEvent) {
         try{
             this.model = e.selectedRows[0].dataItem;
+            this.infoModel = e.selectedRows[0].dataItem;
         }catch{
             this.isInfoOpen = false;
             this.setInfoTab();
