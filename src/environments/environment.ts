@@ -16,5 +16,5 @@ export const environment = {
   ENDPOINT_SEO_TITLE: 'NAF - Solutions',
   FAVICON: './assets/img/favicon.png',
   SEO_DESCRIPTION: ``,
-  apiServer:'http://iqschool.hndedu.com'
+  apiServer:''
 };
