@@ -21,4 +21,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ]
   },
+  {
+    title: 'Cá nhân',
+    icon: 'book-outline',
+    home: true,
+    children: [
+      {
+        title: 'Cá nhân',
+        icon: 'archive-outline',
+        link: '/modules/module-canhans/ca-nhan',
+      },
+    ]
+  },
 ];

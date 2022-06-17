@@ -1,0 +1,55 @@
+<form class="m-form" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]=" 'LB.CAN.NAME' | translate" formControlName="hoTen"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]=" 'LB.CAN.CMND' | translate" formControlName="soCMND"></naf-form-control>
+        </div>
+        <!-- <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.NGAY_SINH' | translate" formControlName="ngaySinh" type="date"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.GIOI_TINH' | translate" formControlName="tenGioiTinh"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.DAN_TOC' | translate" formControlName="danToc"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.TON_GIAO' | translate" formControlName="tonGiao"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.QUOC_TICH' | translate" formControlName="quocTich"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.DIA_CHI' | translate" formControlName="diaChi"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.PHUONG_XA' | translate" formControlName="tenPhuongXa"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.QUAN_HUYEN' | translate" formControlName="tenQuanHuyen"></naf-form-control>
+        </div>
+
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.TINH_THANH' | translate" formControlName="tenTinhThanh"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.LIEN_HE' | translate" formControlName="nguoiLienHe"></naf-form-control>
+        </div> -->
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.CHUC_VU' | translate" formControlName="chucVu"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.SDT' | translate" formControlName="dienThoai" type="number"></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control [label]="'LB.CAN.EMAIL' | translate" formControlName="email"></naf-form-control>
+        </div>
+
+    </div>
+    <div class="text-right border-form-footer mt-4">
+        <button nbButton size="small" status="primary" type="button" (click)="closeForm()" class="btn_custom btn_df mr-1">{{ 'LB.ACTION.CANCEL' | translate }}</button>
+        <button nbButton size="small" status="danger" type="submit" class="btn_custom btn_add">{{ 'LB.ACTION.SAVE' | translate }}</button>
+    </div>
+</form>
