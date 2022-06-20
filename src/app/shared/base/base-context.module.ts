@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NbAccordionModule, NbAlertModule, NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputModule, NbMenuModule, NbWindowModule } from '@nebular/theme';
+import { NbAccordionModule, NbAlertModule, NbButtonModule, NbCardModule, NbFormFieldModule, NbIconModule, NbInputModule, NbMenuModule, NbTabsetModule, NbWindowModule } from '@nebular/theme';
 import { TranslateModule } from '@ngx-translate/core';
 import { DialogsModule, WindowModule } from '@progress/kendo-angular-dialog';
 import { GridModule } from '@progress/kendo-angular-grid';
@@ -22,7 +22,6 @@ import { SafeHtmlPipeModule } from '../utils/pipes/safe-html/safe-html.module';
 import { CommonModule } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { NafSelectModule } from '../controls/naf-select/naf-select.module';
-
 
 const LIBs = [
     CommonModule,
@@ -57,7 +56,8 @@ const LIBs = [
     FormsModule,
     NafSelectModule,
     WindowModule,
-    NbFormFieldModule
+    NbFormFieldModule,
+    NbTabsetModule,
 ];
 
 

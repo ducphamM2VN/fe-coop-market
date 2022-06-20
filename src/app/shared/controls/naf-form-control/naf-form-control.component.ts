@@ -14,6 +14,7 @@ import { config } from './ckeditor-config/ckeditor.config';
 
 export type NafFormControlType =
     | 'input'
+    | 'file'
     | 'color'
     | 'number'
     | 'textarea'

@@ -56,14 +56,12 @@ export class ComponentCaNhanComponent extends BaseCaNhansListComponent<ICaNhans>
       const windowRef = this.windowService.open({
           title: this.getActionName(this.action),
           content: FormCaNhanComponent,
-          width: 800,
+          width: 1200,
           height:700,
           top: 100,
           autoFocusedElement: 'body',
 
       });
-      console.log(this.isInfoOpen)
-      console.log(this.model)
       const param = windowRef.content.instance;
       param.action = this.action;
       param.model = this.model;

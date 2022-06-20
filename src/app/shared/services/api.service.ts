@@ -123,4 +123,24 @@ export class ApiService {
             headers: header
         });
     }
+
+    /**
+     * Gets http client service
+     * @param api
+     * @param [params]
+     * @returns get
+     */
+     getFullPath(api: string, params?: SafeAny): Observable<IResponseData<SafeAny>> {
+      let url = api;
+      if(params != null && params != undefined){
+          url = null;
+          const queryString = Object.keys(params)
+                                .map((key) => `${key}=${params[key]}`)
+                                .join('&');
+          params == null
+              ? (url = api)
+              : (url = api + '?' + queryString);
+      }
+      return this.http.get<IResponseData<SafeAny>>(url);
+  }
 }

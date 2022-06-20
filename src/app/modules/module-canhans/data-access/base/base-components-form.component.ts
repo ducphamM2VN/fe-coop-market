@@ -12,7 +12,6 @@ import { ApiService } from '../../../../shared/services/api.service';
 import { CustomTranslateService } from '../../../../shared/services/custom-translate.service';
 import { NotificationService } from '../../../../shared/services/notification.service';
 import { SecurityUtil } from '../../../../shared/utils/security';
-import { CaNhanService } from '../../services/canhan';
 import { IFileDinhKem } from '../models/base.model';
 
 @Directive()

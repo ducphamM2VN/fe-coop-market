@@ -50,7 +50,7 @@
     "LB.CAN.CA_NHAN": "Cá nhân",
     "LB.CAN.NAME": "Họ tên",
     "LB.CAN.CMND": "CMND/CCCD",
-    "LB.CAN.NGAY_SINH": "Ngày sinh",
+    "LB.CAN.NGAY_SINH": "Ngày tháng năm sinh",
     "LB.CAN.GIOI_TINH": "Giới tính",
     "LB.CAN.DAN_TOC": "Dân tộc",
     "LB.CAN.TON_GIAO": "Tôn giáo",
@@ -98,7 +98,20 @@
     "LB.CAN.DIEN_TICH": "Diện tích",
     "LB.CAN.GIA_THUE_DE_NGHI": "Giá thuê đề nghị",
     "LB.CAN.THOI_GIAN_MO": "Thời gian mở",
-    "LB.CAN.CAC_VAN_DE_KHAC": "Các vấn đề khác"
+    "LB.CAN.CAC_VAN_DE_KHAC": "Các vấn đề khác",
+    "LB.CAN.THONG_TIN_KHACH_HANG": "I. Thông tin khách hàng",
+    "LB.CAN.THONG_TIN_MHKD": "II. Thông tin về mô hình kinh doanh",
+    "LB.CAN.DE_NGHI_KINH_DOANH": "III. Đề nghị kinh doanh",
+    "LB.CAN.CMND_HINH_ANH": "Hình ảnh CMND/ Căn cước",
+    "LB.CAN.CMND_MAT_TRUOC": "Mặt trước",
+    "LB.CAN.CMND_MAT_SAU": "Mặt sau",
+    "LB.CAN.NAM": "Nam",
+    "LB.CAN.NU": "Nữ",
+    "LB.CAN.DIA_CHI_TT": "Địa chỉ thường trú",
+    "LB.CAN.DIA_CHI_HT": "Địa chỉ hiện tại",
+    "LB.CAN.TT_CHUNG": "Thông tin chung",
+    "LB.CAN.TT_LH": "Thông tin liên hệ",
+    "LB.CAN.VTQT": "Vị trí quan tâm (hoặc được chào thuê)"
 
 
 }
