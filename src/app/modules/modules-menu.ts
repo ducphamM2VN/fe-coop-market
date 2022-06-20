@@ -10,14 +10,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
   //   home: true,
   // },
   {
-    title: 'Danh mục',
+    title: 'Đăng ký',
     icon: 'book-outline',
     home: true,
     children: [
       {
         title: 'Ngành hàng',
         icon: 'archive-outline',
-        link: '/modules/module-categories/nganh-hang',
+        link: '/modules/module-dang-ky/nganh-hang',
       },
     ]
   },

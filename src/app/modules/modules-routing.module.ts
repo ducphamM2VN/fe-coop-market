@@ -6,10 +6,15 @@ const routes: Routes = [{
   path: '',
   component: ModulesComponent,
   children: [
+    // {
+    //   path: 'module-categories',
+    //   loadChildren: () => import('./module-categories/module-categories.module')
+    //     .then(m => m.ModuleCategoriesModule),
+    // },
     {
-      path: 'module-categories',
-      loadChildren: () => import('./module-categories/module-categories.module')
-        .then(m => m.ModuleCategoriesModule),
+      path: 'module-dang-ky',
+      loadChildren: () => import('./module-dang-ky/module-dang-ky.module')
+        .then(m => m.ModuleDangKyModule),
     },
     {
       path: 'module-canhans',
@@ -18,7 +23,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'module-categories',
+      redirectTo: 'module-canhans',
       pathMatch: 'full',
     },
   ],

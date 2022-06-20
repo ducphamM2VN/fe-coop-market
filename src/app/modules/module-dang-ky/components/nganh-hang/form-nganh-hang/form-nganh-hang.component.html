@@ -1,0 +1,36 @@
+<form class="m-form" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control
+                [label]="'LB.CAT.INDEX' | translate"
+                formControlName="soThuTu"
+                type="number"
+                min="0"
+            ></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-6 col-lg-6 mb-2">
+            <naf-form-control
+                [label]="'LB.CAT.NAME' | translate"
+                formControlName="ten"
+            ></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+            <naf-form-control
+                [label]="'LB.CAT.DES' | translate"
+                formControlName="moTa"
+                type="textarea"
+            ></naf-form-control>
+        </div>
+        <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+            <naf-form-control
+                [label]="'LB.CAT.NOTE' | translate"
+                formControlName="ghiChu"
+                type="textarea"
+            ></naf-form-control>
+        </div>
+    </div>
+    <div class="text-right border-form-footer mt-4">
+        <button nbButton size="small" status="primary" type="button" (click)="closeForm()" class="btn_custom btn_df mr-1">{{ 'LB.ACTION.CANCEL' | translate }}</button>
+        <button nbButton size="small" status="danger" type="submit" class="btn_custom btn_add">{{ 'LB.ACTION.SAVE' | translate }}</button>
+    </div>
+</form>
