@@ -10,7 +10,6 @@ import { ICaNhans } from "../../../data-access/models/canhan.model";
     templateUrl: "./form-ca-nhan.component.html",
 })
 export class FormCaNhanComponent extends BaseCaNhansFormComponent<ICaNhans> implements OnInit {
-    loadItem(): void { }
     url: String = UrlModuleCaNhans.ROUTE_CANHANS.CA_NHAN;
 
     constructor(injector: Injector) {
@@ -23,7 +22,7 @@ export class FormCaNhanComponent extends BaseCaNhansFormComponent<ICaNhans> impl
             case ActionEnum.CREATE:
                 break;
             case ActionEnum.UPDATE:
-                this.setFormValue(this.model);
+                this.form.patchValue(this.model);
                 break;
         }
     }
@@ -65,5 +64,9 @@ export class FormCaNhanComponent extends BaseCaNhansFormComponent<ICaNhans> impl
         this.form.get('idPhuongXa').setValue = data.idPhuongXa
 
         console.log(this.form.value)
+    }
+    protected showFormCreateOrUpdate(): void {
+    }
+    protected loadItems(): void {
     }
 }

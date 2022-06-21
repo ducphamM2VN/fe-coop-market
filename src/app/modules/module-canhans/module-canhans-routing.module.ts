@@ -9,6 +9,10 @@ const routes: Routes = [
         component: ComponentCaNhanComponent,
     },
     {
+        path: 'form-ca-nhan/:id',
+        component: FormCaNhanComponent,
+    },
+    {
         path: '',
         redirectTo: 'ca-nhan',
         pathMatch: 'full',

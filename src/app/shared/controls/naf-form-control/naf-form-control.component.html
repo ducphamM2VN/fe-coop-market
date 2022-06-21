@@ -116,10 +116,9 @@
             <input nbInput
                [placeholder]="placeHolder"
                (ngModelChange)="onModelChange($event)"
-               [nbDatepicker]="formpicker"
+               type="date"
                [disabled]="isDisabled"
                fullWidth>
-            <nb-datepicker #formpicker format="dd/MM/yyyy"></nb-datepicker>
         </ng-container>
     </ng-container>
 </ng-template>
