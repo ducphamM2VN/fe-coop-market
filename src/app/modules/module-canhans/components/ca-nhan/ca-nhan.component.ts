@@ -1,5 +1,6 @@
 import { Component, Injector, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SecurityUtil } from '../../../../shared/utils/security';
 import { SafeAny } from '../../../../shared/utils/types';
 import { UrlModuleCaNhans } from '../../data-access/apis/api-list';
 import { BaseCaNhansListComponent } from '../../data-access/base/base-components-list.component';
@@ -22,8 +23,7 @@ export class ComponentCaNhanComponent extends BaseCaNhansListComponent<ICaNhans>
         };
     }
 
-    constructor(injector: Injector,
-        private router: Router) {
+    constructor(injector: Injector) {
         super(injector)
     }
 
@@ -47,6 +47,7 @@ export class ComponentCaNhanComponent extends BaseCaNhansListComponent<ICaNhans>
         this.removeSelectedHandler();
     }
     showFormCreateOrUpdate() {
-        this.router.navigate(['/modules/module-canhans/form-ca-nhan', encodeURIComponent(this.model ? this.model.id : 0)])
+        const uid = SecurityUtil.encrypted(this.model ? this.model.id.toString() : "0");
+        this.router.navigate(['/modules/module-canhans/form-ca-nhan',uid])
     }
 }

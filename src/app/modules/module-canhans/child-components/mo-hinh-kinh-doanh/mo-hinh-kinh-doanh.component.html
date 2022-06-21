@@ -1,0 +1,142 @@
+<nb-card>
+    <form class="m-form m-3" novalidate [formGroup]="form">
+        <div class="row">
+            <div class="form-group m-form__group col-md-4 col-lg-4 mb-2">
+                <ngx-naf-select
+                    [label]="'LB.CAN.TEN_NGANH_HANG' | translate"
+                    formControlName="idNganhHang"
+                    [modeOfDropDownList]="dropdownListEnum.NGANH_HANG"
+                ></ngx-naf-select>
+            </div>
+            <div class="form-group m-form__group col-md-4 col-lg-4 mb-2">
+                <naf-form-control
+                    [label]="'LB.CAN.THUONG_HIEU' | translate"
+                    formControlName="thuongHieu"
+                ></naf-form-control>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2 mt-5">
+                <h5>{{'LB.CAN.KHMT' | translate}}</h5>
+            </div>
+            <div class="form-group m-form__group col-md-4 col-lg-4 mb-2">
+                <ngx-naf-select
+                    [label]="'LB.CAN.DO_TUOI' | translate"
+                    formControlName="idDoTuoi"
+                    [modeOfDropDownList]="dropdownListEnum.DO_TUOI"
+                ></ngx-naf-select>
+            </div>
+            <div class="form-group m-form__group col-md-4 col-lg-4 mb-2">
+                <ngx-naf-select
+                    [label]="'LB.CAN.KH' | translate"
+                    formControlName="idDoiTuongKhachHang"
+                    [modeOfDropDownList]="dropdownListEnum.KHACH_HANG"
+                ></ngx-naf-select>
+            </div>
+            <div class="form-group m-form__group col-md-4 col-lg-4 mb-2">
+                <ngx-naf-select
+                    [label]="'LB.CAN.MUC_THU_NHAP' | translate"
+                    formControlName="idThuNhap"
+                    [modeOfDropDownList]="dropdownListEnum.THU_NHAP"
+                ></ngx-naf-select>
+            </div>
+            <div class="form-group m-form__group col-md-8 col-lg-8 mb-2">
+                <div class="row">
+                    <div class="col-6">
+                        <label class="mt-4">{{'LB.CAN.GBTB' | translate}}</label>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <naf-form-control
+                                    [label]="'LB.CAN.TU' | translate"
+                                    formControlName="giaTrungBinhTu"
+                                    type="number"
+                                ></naf-form-control>
+                            </div>
+                            <div class="col-6">
+                                <naf-form-control
+                                    [label]="'LB.CAN.DEN' | translate"
+                                    formControlName="giaTrungBinhDen"
+                                    type="number"
+                                ></naf-form-control>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <label class="w-100">{{ 'LB.CAN.XUAT_XU_HH' | translate }}</label>
+                <nb-radio-group formControlName="idXuatXu" fullWidth>
+                    <nb-radio value="0">{{ 'LB.CAN.NOI_DIA' | translate }}</nb-radio>
+                    <nb-radio value="1">{{ 'LB.CAN.TU_SX' | translate }}</nb-radio>
+                    <nb-radio value="2">{{ 'LB.CAN.PPL' | translate }}</nb-radio>
+                    <nb-radio value="3">{{ 'LB.CAN.NGOAI_NHAP' | translate }}</nb-radio>
+                    <nb-radio value="4">{{ 'LB.CAN.KHAC' | translate }}</nb-radio>
+                </nb-radio-group>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <naf-form-control
+                    [label]="'LB.CAN.DIEM_NOI_BAT' | translate"
+                    formControlName="noiBatkhacBiet"
+                    type="textarea"
+                ></naf-form-control>
+            </div>
+            <div class="form-group m-form__group col-md-8 col-lg-8 mb-2">
+                <div class="row">
+                    <div class="col-6">
+                        <label class="mt-4">{{'LB.CAN.DOANH_THU' | translate}}</label>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <naf-form-control
+                                    [label]="'LB.CAN.TU' | translate"
+                                    formControlName="doanhThuTrungBinhTu"
+                                    type="number"
+                                ></naf-form-control>
+                            </div>
+                            <div class="col-6">
+                                <naf-form-control
+                                    [label]="'LB.CAN.DEN' | translate"
+                                    formControlName="doanhThuTrungBinhDen"
+                                    type="number"
+                                ></naf-form-control>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-form__group col-md-8 col-lg-8 mb-2">
+                <div class="row">
+                    <div class="col-6">
+                        <label class="mt-4">{{'LB.CAN.DT_THUE' | translate}}</label>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <naf-form-control
+                                    [label]="'LB.CAN.TOI_THIEU' | translate"
+                                    formControlName="dienTichToiThieu"
+                                    type="number"
+                                ></naf-form-control>
+                            </div>
+                            <div class="col-6">
+                                <naf-form-control
+                                    [label]="'LB.CAN.TOI_DA' | translate"
+                                    formControlName="dienTichToiDa"
+                                    type="number"
+                                ></naf-form-control>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <naf-form-control
+                    [label]="'LB.CAN.DAC_DIEM_VI_TRI_THUE' | translate"
+                    formControlName="dacDiemViTri"
+                    type="textarea"
+                ></naf-form-control>
+            </div>
+        </div>
+    </form>
+</nb-card>

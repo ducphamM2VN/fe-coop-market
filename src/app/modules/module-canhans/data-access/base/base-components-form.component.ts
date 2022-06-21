@@ -23,7 +23,7 @@ export abstract class BaseCaNhansFormComponent<T> extends BaseListComponent<T>
     dropdownListEnum = DropDownListEnum;
     isVietnamese = true;
     modelVietnamese: T;
-
+    currentId: number = 0;
     fileList: IFileDinhKem[] = [];
     arrIdsExclude: number[] = [];
     configCkeditor = config.other1Option
@@ -50,11 +50,17 @@ export abstract class BaseCaNhansFormComponent<T> extends BaseListComponent<T>
     }
 
     ngOnInit(): void {
+        const paramUrlId = SecurityUtil.decrypt(this.route.snapshot.paramMap.get('id'));
+        this.currentId = this.convertToNumberAfterDecrypt(paramUrlId);
         this.createForm();
         super.ngOnInit();
         if (!this.action) {
             this.action = this.model ? ActionEnum.UPDATE : ActionEnum.CREATE;
         }
+    }
+
+    convertToNumberAfterDecrypt(text){
+      return Number(text.slice(0, -1).slice(1))
     }
 
     ngOnDestroy(): void {

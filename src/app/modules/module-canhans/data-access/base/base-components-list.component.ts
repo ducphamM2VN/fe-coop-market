@@ -24,6 +24,7 @@ export abstract class BaseCaNhansListComponent<T> extends BaseListComponent<T> {
     protected notification: NotificationService;
     protected modal: NbDialogService;
     protected translate: CustomTranslateService;
+    protected router: Router;
 
     constructor(injector: Injector) {
         super(injector);
@@ -32,6 +33,7 @@ export abstract class BaseCaNhansListComponent<T> extends BaseListComponent<T> {
         this.notification = injector.get(NotificationService);
         this.modal = injector.get(NbDialogService);
         this.translate = injector.get(CustomTranslateService);
+        this.router = injector.get(Router)
     }
 
     culturesEnum = CulturesEnum;

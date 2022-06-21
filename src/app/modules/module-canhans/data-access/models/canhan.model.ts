@@ -26,11 +26,9 @@ export interface IMoHinhKinhDoanh {
   id: number;
   idNganhHang: number;
   thuongHieu: string;
-  tuoiTu: number;
-  tuoiDen: number;
+  idDoTuoi: number;
   idDoiTuongKhachHang: number;
-  thuNhapTu: number;
-  thuNhapDen: number;
+  idThuNhap: number;
   giaTrungBinhTu: number;
   giaTrungBinhDen: number;
   idXuatXu: number; //enum
