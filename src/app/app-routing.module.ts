@@ -14,37 +14,6 @@ export const routes: Routes = [
     loadChildren: () => import('./modules/modules.module')
       .then(m => m.ModulesModule),
   },
-  // { path: 'auths', loadChildren:()=>import('././auths/auths.module').then((x) => x.AuthsModule) },
-  // {
-  //   path: 'auth',
-  //   component: NbAuthComponent,
-  //   children: [
-  //     {
-  //       path: '',
-  //       component: NbLoginComponent,
-  //     },
-  //     {
-  //       path: 'login',
-  //       component: NbLoginComponent,
-  //     },
-  //     {
-  //       path: 'register',
-  //       component: NbRegisterComponent,
-  //     },
-  //     {
-  //       path: 'logout',
-  //       component: NbLogoutComponent,
-  //     },
-  //     {
-  //       path: 'request-password',
-  //       component: NbRequestPasswordComponent,
-  //     },
-  //     {
-  //       path: 'reset-password',
-  //       component: NbResetPasswordComponent,
-  //     },
-  //   ],
-  // },
   {
     path: 'auth',
     loadChildren:()=>import('././auth/auth.module').then((x) => x.NgxAuthModule)
