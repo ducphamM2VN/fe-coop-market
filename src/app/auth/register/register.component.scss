@@ -1,0 +1,12 @@
+nb-tabset {
+    width: 900px;
+    margin: auto;
+}
+
+[nbButton].appearance-filled.status-success,
+.appearance-filled.status-success[nbButtonToggle] {
+    width: 50%;
+    text-align: center;
+    display: inherit;
+    margin: auto;
+}

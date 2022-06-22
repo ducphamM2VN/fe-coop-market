@@ -1,0 +1,20 @@
+.carousel {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    &::after {
+        content: ' ';
+        display: block;
+        clear: both;
+    }
+    >div {
+        float: left;
+        margin-right: -100%;
+        width: 300px;
+        cursor: pointer;
+        img {
+            border-radius: 1rem;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .35);
+        }
+    }
+}
