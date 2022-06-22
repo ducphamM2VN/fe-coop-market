@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-4">
             <h1 id="title" class="title">Sign In</h1>
-            <nb-alert *ngIf="showMessages.error && errors?.length && !submitted" outline="danger" role="alert">
+            <nb-alert *ngIf="showMessages.error && errors?.length" outline="danger" role="alert">
                 <p class="alert-title"><b>Oh snap!</b></p>
                 <ul class="alert-message-list">
                     <li *ngFor="let error of errors" class="alert-message">{{ error }}</li>
@@ -57,7 +57,7 @@
                     </nb-checkbox>
                     <a class="forgot-password" routerLink="../request-password">Forgot Password?</a>
                 </div>
-                <button nbButton fullWidth status="success" [disabled]="submitted || !form.valid" [class.btn-pulse]="submitted">
+                <button nbButton fullWidth status="success" (click)="loginApp(user)" [disabled]="!form.valid" [class.btn-pulse]="submitted">
                     Sign In
                 </button>
             </form>
