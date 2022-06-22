@@ -137,6 +137,150 @@
                     type="textarea"
                 ></naf-form-control>
             </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <label class="w-100">{{ 'LB.CAN.KIEU_GIAN_HANG' | translate }}</label>
+                <nb-radio-group formControlName="idXuatXu" fullWidth>
+                    <nb-radio value="0">{{ 'LB.CAN.GIAN_HANG_MO' | translate }}</nb-radio>
+                    <nb-radio value="1">{{ 'LB.CAN.GIAN_HANG_DONG' | translate }}</nb-radio>
+                </nb-radio-group>
+            </div>
+            <div class="form-group m-form__group col-md-8 col-lg-8 mb-2">
+                <div class="row">
+                    <div class="col-6">
+                        <label class="mt-4">{{'LB.CAN.GIA_THUE_CHAP_NHAN' | translate}}</label>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <naf-form-control
+                                    [label]="'LB.CAN.GIA_THUE_DE_NGHI' | translate"
+                                    formControlName="giaThueChapNhan"
+                                    type="number"
+                                ></naf-form-control>
+                            </div>
+                            <div class="col-6">
+                                <ngx-naf-select
+                                    [label]="'LB.CAN.LOAI_TIEN_TE' | translate"
+                                    formControlName="idTienTe"
+                                    [modeOfDropDownList]="dropdownListEnum.TIEN_TE"
+                                ></ngx-naf-select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-form__group col-md-8 col-lg-8 mb-2">
+                <div class="row">
+                    <div class="col-6">
+                        <label class="mt-4">{{'LB.CAN.GIA_THUE_CHAP_NHAN' | translate}}</label>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <naf-form-control
+                                    [label]="'LB.CAN.GIA_THUE_DE_NGHI' | translate"
+                                    formControlName="giaThueChapNhan"
+                                    type="number"
+                                ></naf-form-control>
+                            </div>
+                            <div class="col-6">
+                                <ngx-naf-select
+                                    [label]="'LB.CAN.LOAI_TIEN_TE' | translate"
+                                    formControlName="idTienTe"
+                                    [modeOfDropDownList]="dropdownListEnum.TIEN_TE"
+                                ></ngx-naf-select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-form__group col-md-8 col-lg-8 mb-2">
+                <label class="w-100">{{ 'LB.CAN.SO_LUONG_CUA_HANG_HT' | translate }}</label>
+                <nb-radio-group formControlName="idViTriCuahang" fullWidth>
+                    <nb-radio value="0">{{ 'LB.CAN.CUA_HANG_DOC_LAP' | translate }}</nb-radio>
+                    <nb-radio value="1">{{ 'LB.CAN.TRONG_TTTM' | translate }}</nb-radio>
+                </nb-radio-group>
+            </div>
+            <div class="form-group m-form__group col-md-4 col-lg-4 mb-2">
+                <naf-form-control
+                    [label]="'LB.CAN.SO_LUONG_CUA_HANG' | translate"
+                    formControlName="soLuongCuaHang"
+                    type="number"
+                ></naf-form-control>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <naf-form-control
+                    [label]="'LB.CAN.DA_CO_MAT' | translate"
+                    formControlName="cuaHangDaCo"
+                    type="textarea"
+                ></naf-form-control>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <naf-form-control
+                    [label]="'LB.CAN.CUA_HANG_DU_KIEN_MO' | translate"
+                    formControlName="cuaHangDuKien"
+                    type="textarea"
+                ></naf-form-control>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <naf-form-control
+                    [label]="'LB.CAN.COOP_QUAN_TAM' | translate"
+                    formControlName="viTriQuanTamMoCuaHang"
+                    type="textarea"
+                ></naf-form-control>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <naf-form-control
+                    [label]="'LB.CAN.YC_KHAC' | translate"
+                    formControlName="yeuCauMarketing"
+                    type="textarea"
+                ></naf-form-control>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <label class="w-100">{{ 'LB.CAN.YEU_CAU_MAT_BANG_KT' | translate }}</label>
+                <nb-radio-group formControlName="idViTriCuahang" fullWidth>
+                    <nb-radio value="0">{{ 'LB.CAN.YEU_CAU_MAT_BANG_THO' | translate }}</nb-radio>
+                    <nb-radio value="1">{{ 'LB.CAN.YEU_CAU_NUOC' | translate }}</nb-radio>
+                    <nb-radio value="2">{{ 'LB.CAN.YEU_CAU_DIEN' | translate }}</nb-radio>
+                    <nb-radio value="3">{{ 'LB.CAN.YEU_CAU_HUT_MUI' | translate }}</nb-radio>
+                    <nb-radio value="4">{{ 'LB.CAN.YEU_CAU_CHE_BIEN' | translate }}</nb-radio>
+                    <nb-radio value="5">{{ 'LB.CAN.YEU_CAU_NUOC_THAI' | translate }}</nb-radio>
+                    <nb-radio value="6">{{ 'LB.CAN.YEU_CAU_TAI_TRONG' | translate }}</nb-radio>
+                    <nb-radio value="7">{{ 'LB.CAN.YEU_CAU_KHAC' | translate }}</nb-radio>
+                </nb-radio-group>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <div class="row">
+                    <div class="col-6">
+                        <label class="mt-4">{{'LB.CAN.YC_THOI_GIAN_TK' | translate}}</label>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-6">
+                                  <ngx-naf-select
+                                      [label]="'LB.CAN.YC_THOI_GIAN_TKTB' | translate"
+                                      formControlName="idThoiGianThiCongTB"
+                                      [modeOfDropDownList]="dropdownListEnum.HAN_THI_CONG"
+                                  ></ngx-naf-select>
+                            </div>
+                            <div class="col-6">
+                                <ngx-naf-select
+                                    [label]="'LB.CAN.YC_THOI_GIAN_TCTB' | translate"
+                                    formControlName="idThoiGianThiCongTB"
+                                    [modeOfDropDownList]="dropdownListEnum.HAN_THI_CONG"
+                                ></ngx-naf-select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                <naf-form-control
+                    [label]="'LB.CAN.YC_KHAC' | translate"
+                    formControlName="yeuCauMarketing"
+                    type="textarea"
+                ></naf-form-control>
+            </div>
         </div>
     </form>
 </nb-card>

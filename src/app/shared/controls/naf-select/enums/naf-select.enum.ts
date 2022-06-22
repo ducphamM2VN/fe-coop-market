@@ -10,5 +10,6 @@ export enum DropDownListEnum {
     DO_TUOI,
     KHACH_HANG,
     THU_NHAP,
-    TIEN_TE
+    TIEN_TE,
+    HAN_THI_CONG
 }

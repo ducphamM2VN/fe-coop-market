@@ -124,6 +124,22 @@ export const CatLoaiTienTe = [
     name: "USD"
   },
 ]
+export const CatHanThiCOng = [
+  {
+    id: 1,
+    name: "5 ngày"
+  },
+  {
+    id: 2,
+    name: "10 ngày"
+  },
+  {
+    id: 3,
+    name: "15 ngày"
+  },
+]
+
+
 
 
 
