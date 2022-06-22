@@ -2,21 +2,19 @@ import { Directive, Injector, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NbWindowService } from '@nebular/theme';
-import { WindowRef } from '@progress/kendo-angular-dialog';
 import { Subject } from 'rxjs';
 import { ActionEnum, CulturesEnum } from '../../../../constants/enum.constant';
-import { BaseFormComponent } from '../../../../shared/base/base-form.component';
+import { BaseListComponent } from '../../../../shared/base/base-list.component';
 import { config } from '../../../../shared/controls/naf-form-control/ckeditor-config/ckeditor.config';
 import { DropDownListEnum } from "../../../../shared/controls/naf-select/enums/naf-select.enum";
 import { ApiService } from '../../../../shared/services/api.service';
 import { CustomTranslateService } from '../../../../shared/services/custom-translate.service';
 import { NotificationService } from '../../../../shared/services/notification.service';
 import { SecurityUtil } from '../../../../shared/utils/security';
-import { CaNhanService } from '../../services/canhan';
 import { IFileDinhKem } from '../models/base.model';
 
 @Directive()
-export abstract class BaseCaNhansFormComponent<T> extends BaseFormComponent<T>
+export abstract class BaseCaNhansFormComponent<T> extends BaseListComponent<T>
     implements OnInit, OnDestroy {
     @Input() model: T;
     tabCurrentIndex = 0;
@@ -25,7 +23,7 @@ export abstract class BaseCaNhansFormComponent<T> extends BaseFormComponent<T>
     dropdownListEnum = DropDownListEnum;
     isVietnamese = true;
     modelVietnamese: T;
-
+    currentId: number = 0;
     fileList: IFileDinhKem[] = [];
     arrIdsExclude: number[] = [];
     configCkeditor = config.other1Option
@@ -37,7 +35,6 @@ export abstract class BaseCaNhansFormComponent<T> extends BaseFormComponent<T>
     protected notification: NotificationService;
     protected modal: NbWindowService;
     protected route: ActivatedRoute;
-    protected windowRef: WindowRef;
     protected translate: CustomTranslateService;
 
 
@@ -49,16 +46,21 @@ export abstract class BaseCaNhansFormComponent<T> extends BaseFormComponent<T>
         this.notification = injector.get(NotificationService);
         this.modal = injector.get(NbWindowService);
         this.route = injector.get(ActivatedRoute);
-        this.windowRef = injector.get(WindowRef);
         this.translate = injector.get(CustomTranslateService);
     }
 
     ngOnInit(): void {
-        super.ngOnInit();
+        const paramUrlId = SecurityUtil.decrypt(this.route.snapshot.paramMap.get('id'));
+        this.currentId = this.convertToNumberAfterDecrypt(paramUrlId);
         this.createForm();
+        super.ngOnInit();
         if (!this.action) {
             this.action = this.model ? ActionEnum.UPDATE : ActionEnum.CREATE;
         }
+    }
+
+    convertToNumberAfterDecrypt(text){
+      return Number(text.slice(0, -1).slice(1))
     }
 
     ngOnDestroy(): void {
@@ -96,10 +98,6 @@ export abstract class BaseCaNhansFormComponent<T> extends BaseFormComponent<T>
         this.fileList.splice(index, 1);
     }
 
-    closeForm() {
-        this.windowRef.close();
-    }
-
     get cultureId(): CulturesEnum {
         return Number.parseInt(this.route.snapshot.queryParams['cultureId'], 10);
     }
@@ -121,8 +119,6 @@ export abstract class BaseCaNhansFormComponent<T> extends BaseFormComponent<T>
 
     abstract createForm(): void
 
-    abstract loadItem(): void
-
     changeTabIndex(event) {
         this.tabCurrentIndex = event.index;
     }
@@ -135,8 +131,6 @@ export abstract class BaseCaNhansFormComponent<T> extends BaseFormComponent<T>
                     .subscribe(res => {
                         // show notification
                         this.notification.showSuccessMessage(this.translate.get('MES.ACTION.ADD_SUCCESS'));
-                        // close form
-                        this.closeForm();
                     });
                 break;
             case ActionEnum.UPDATE:
@@ -145,8 +139,6 @@ export abstract class BaseCaNhansFormComponent<T> extends BaseFormComponent<T>
                     .subscribe(res => {
                         // show notification
                         this.notification.showSuccessMessage(this.translate.get('MES.ACTION.UPDATE_SUCCESS'));
-                        // close form
-                        this.closeForm();
                     });
                 break;
         }

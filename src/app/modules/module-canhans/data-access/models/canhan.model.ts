@@ -3,14 +3,14 @@ export interface ICaNhans {
   hoTen: string;
   soCMND: number;
   ngaySinh: Date;
-  tenGioiTinh: boolean;
-  danToc: string;
-  tonGiao: string;
-  quocTich: number;
+  gioiTinh: boolean;
+  idDanToc: string;
+  idTonGiao: string;
+  idQuocTich: number;
   diaChi: string;
-  tenPhuongXa: number;
-  tenQuanHuyen: number;
-  tenTinhThanh: number;
+  idPhuongXa: number;
+  idQuanHuyen: number;
+  idTinhThanh: number;
   nguoiLienHe: string;
   chucVu: string;
   dienThoai: string;
@@ -26,11 +26,9 @@ export interface IMoHinhKinhDoanh {
   id: number;
   idNganhHang: number;
   thuongHieu: string;
-  tuoiTu: number;
-  tuoiDen: number;
+  idDoTuoi: number;
   idDoiTuongKhachHang: number;
-  thuNhapTu: number;
-  thuNhapDen: number;
+  idThuNhap: number;
   giaTrungBinhTu: number;
   giaTrungBinhDen: number;
   idXuatXu: number; //enum

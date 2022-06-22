@@ -1185,3 +1185,10 @@ textarea {
 .nb-theme-docs-page [_nghost-ejt-c109] .middle-column[_ngcontent-ejt-c109] nb-card table tr {
     border-bottom: 1px solid #f1f2f3;
 }
+.select2-container {
+    width: 100% !important;
+}
+nb-radio.status-basic {
+  width: fit-content;
+  display: inline-block;
+}

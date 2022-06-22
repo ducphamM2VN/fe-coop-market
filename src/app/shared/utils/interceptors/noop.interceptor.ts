@@ -6,7 +6,7 @@ import {
     HttpRequest,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SafeAny } from '@asc-nx/shared/utils';
+import { SafeAny } from '../types';
 
 @Injectable()
 export class NoopInterceptor implements HttpInterceptor {

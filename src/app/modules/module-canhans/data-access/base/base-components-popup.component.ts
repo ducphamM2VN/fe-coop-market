@@ -9,7 +9,7 @@ import { NotificationService } from '../../../../shared/services/notification.se
 
 @Directive()
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
-export abstract class BaseCaNhanPopupComponent<T>
+export abstract class BaseCaNhansPopupComponent<T>
     implements OnInit, OnDestroy {
     @Input() model: T;
     @Input() cultureId: CulturesEnum;

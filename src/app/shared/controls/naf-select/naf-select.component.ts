@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { ApiService } from '../../services/api.service';
 import { SafeAny } from '../../utils/types';
 import { UrlModuleCategory } from './apis/api-list';
+import { CatDanToc, CatDoTuoi, CatGioiTinh, CatHanThiCOng, CatKhachHangMucTieu, CatLoaiTienTe, CatMucThuNhap, CatNganhHang, CatQuocTich, CatTonGiao } from './data-access/data-access.categories';
 import { DropDownListEnum } from './enums/naf-select.enum';
 
 @Component({
@@ -22,12 +23,12 @@ export class NafSelectComponent implements ControlValueAccessor {
     @Input() modeOfDropDownList: DropDownListEnum;
     @Input() isMulti: Boolean = false;
     @Input() label: String;
+    @Input() reference: String;
     options: SafeAny;
 
     urlCategory: SafeAny = UrlModuleCategory;
     value: string;
     lstData = [];
-    reference: string;
     isDisabled: boolean;
     private readonly destroy$ = new Subject<void>();
 
@@ -64,14 +65,32 @@ export class NafSelectComponent implements ControlValueAccessor {
             width: '100%'
         };
         switch (this.modeOfDropDownList) {
-            case DropDownListEnum.PREMISES:
-                this.loadPremises();
+            case DropDownListEnum.DAN_TOC:
+                this.loadDanToc()
                 break;
-            case DropDownListEnum.GRADE:
-                this.loadGrade();
+            case DropDownListEnum.TON_GIAO:
+                this.loadTonGiao()
                 break;
-            case DropDownListEnum.SCHOOLYEAR:
-                this.loadSchoolYear();
+            case DropDownListEnum.QUOC_TICH:
+                this.loadQuocTich()
+                break;
+            case DropDownListEnum.NGANH_HANG:
+                this.loadNganhHang()
+                break;
+            case DropDownListEnum.DO_TUOI:
+                this.loadDoTuoi()
+                break;
+            case DropDownListEnum.KHACH_HANG:
+                this.loadKhachHang()
+                break;
+            case DropDownListEnum.THU_NHAP:
+                this.loadThuNhap()
+                break;
+            case DropDownListEnum.TIEN_TE:
+                this.loadTienTe()
+                break;
+            case DropDownListEnum.HAN_THI_CONG:
+                this.loadHanThiCong()
                 break;
         }
     }
@@ -93,32 +112,84 @@ export class NafSelectComponent implements ControlValueAccessor {
                 }
             });
     }
-
-    loadPremises() {
-        this.loadApiCategory(this.urlCategory.ROUTE.PREMISES);
+    loadDanToc() {
+        this.lstData = CatDanToc.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
     }
-
-    loadGrade() {
-        this.loadApiCategory(this.urlCategory.ROUTE.GRADE);
+    loadGioiTinh() {
+        this.lstData = CatGioiTinh.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
     }
-    loadSchoolYear() {
-        this.loadApiCategory(this.urlCategory.ROUTE.SCHOOLYEAR);
+    loadTonGiao() {
+        this.lstData = CatTonGiao.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
     }
-    loadUser() {
-        this.apiService
-            .get(this.urlCategory.ROUTE.USERS)
-            .pipe(takeUntil(this.destroy$))
-            .subscribe((res: SafeAny) => {
-                if (res && res.items) {
-                    this.lstData = res.items.map((e: SafeAny) => {
-                        return {
-                            id: e.id,
-                            text: e.userName + ' - ' + e.name
-                        }
-                    });
-                } else {
-                    this.lstData = [];
-                }
-            });
+    loadQuocTich() {
+        this.lstData = CatQuocTich.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadNganhHang() {
+        this.lstData = CatNganhHang.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadDoTuoi() {
+        this.lstData = CatDoTuoi.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadKhachHang() {
+        this.lstData = CatKhachHangMucTieu.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadThuNhap() {
+        this.lstData = CatMucThuNhap.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadTienTe() {
+        this.lstData = CatLoaiTienTe.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadHanThiCong() {
+        this.lstData = CatHanThiCOng.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
     }
 }

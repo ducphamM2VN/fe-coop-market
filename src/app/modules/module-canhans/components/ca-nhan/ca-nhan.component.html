@@ -97,11 +97,25 @@
 
                     <kendo-grid-column field="hoTen" class="kendo_title" [title]="'LB.CAN.NAME' | translate" [width]="150">
                     </kendo-grid-column>
-                    <kendo-grid-column field="ngaySinh" class="kendo_title" [title]="'LB.CAN.NGAY_SINH' | translate" [width]="100">
+                    <kendo-grid-column field="ngaySinh" class="kendo_title" [title]="'LB.CAN.NGAY_SINH' | translate" [width]="150" [headerStyle]="{
+                      'text-align': 'center'
+                      }">
+                        <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+                            <div class="text-center">
+                                {{dataItem.ngaySinh}}
+                            </div>
+                        </ng-template>
                     </kendo-grid-column>
                     <kendo-grid-column field="tenGioiTinh" class="kendo_title" [title]="'LB.CAN.GIOI_TINH' | translate" [width]="100">
                     </kendo-grid-column>
-                    <kendo-grid-column field="dienThoai" class="kendo_title" [title]="'LB.CAN.SDT' | translate" [width]="100">
+                    <kendo-grid-column field="dienThoai" class="kendo_title" [title]="'LB.CAN.SDT' | translate" [width]="100" [headerStyle]="{
+                      'text-align': 'center'
+                      }">
+                        <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+                            <div class="text-center">
+                                {{dataItem.dienThoai}}
+                            </div>
+                        </ng-template>
                     </kendo-grid-column>
                     <kendo-grid-column field="diaChi" class="kendo_title" [title]="'LB.CAN.DIA_CHI' | translate" [width]="250">
                     </kendo-grid-column>
@@ -377,7 +391,3 @@
         </div>
     </nb-card-body>
 </nb-card>
-<div class="k-overlay" *ngIf="opened"></div>
-<div class="wrapper form-layouts">
-    <div kendoWindowContainer></div>
-</div>

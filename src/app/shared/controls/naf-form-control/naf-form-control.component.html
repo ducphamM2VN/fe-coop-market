@@ -40,7 +40,7 @@
     <ng-container [ngSwitch]="type">
         <ng-container *ngSwitchCase="'input'">
             <input type="text"
-                   nbInput 
+                   nbInput
                    fullWidth
                    [disabled]="isDisabled"
                    [placeholder]="placeHolder"
@@ -74,9 +74,9 @@
                       [rows]="rows"></textarea>
         </ng-container>
         <ng-container *ngSwitchCase="'ckeditor'">
-            <ckeditor class="control__ckeditor" 
-                      [config]="ckConfig" 
-                      [(ngModel)]="inputValue" 
+            <ckeditor class="control__ckeditor"
+                      [config]="ckConfig"
+                      [(ngModel)]="inputValue"
                       (ngModelChange)="onModelChange($event)">
             </ckeditor>
         </ng-container>
@@ -95,10 +95,21 @@
             </div>
         </ng-container>
         <ng-container *ngSwitchCase="'number'">
-            <input nbInput 
-                   type="number" 
+            <input nbInput
+                   type="number"
                    [(ngModel)]="inputValue"
-                   (ngModelChange)="onModelChange($event)" 
+                   (ngModelChange)="onModelChange($event)"
+                   [disabled]="isDisabled"
+                   [min]="min"
+                   [max]="max"
+                   fullWidth
+                   nullValue/>
+        </ng-container>
+        <ng-container *ngSwitchCase="'file'">
+            <input nbInput
+                   type="file"
+                   [(ngModel)]="inputValue"
+                   (ngModelChange)="onModelChange($event)"
                    [disabled]="isDisabled"
                    fullWidth
                    nullValue/>
@@ -107,10 +118,9 @@
             <input nbInput
                [placeholder]="placeHolder"
                (ngModelChange)="onModelChange($event)"
-               [nbDatepicker]="formpicker"
+               type="date"
                [disabled]="isDisabled"
                fullWidth>
-            <nb-datepicker #formpicker format="dd/MM/yyyy"></nb-datepicker>
         </ng-container>
     </ng-container>
 </ng-template>

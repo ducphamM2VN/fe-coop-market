@@ -124,4 +124,5 @@ export abstract class BaseListComponent<T> extends BaseCheckPermission implement
     protected abstract showFormCreateOrUpdate(): void;
 
     protected abstract loadItems(): void;
+
 }
