@@ -50,3 +50,9 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.nb-theme-default .clsInfo .row.mb-1.font-italic.ng-star-inserted:nth-child(odd),
+td .bg_table:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid #f1f2f3;
+}
