@@ -48,7 +48,7 @@ export class FormCaNhanComponent extends BaseCaNhansFormComponent<ICaNhans> impl
             dienTich: [null, Validators.required],
             giaThueDeNghi: [null, Validators.required],
             tenTienTe: [null, Validators.required],
-            thoiGianMo: [null, Validators.required],
+            thoiGianMo: [null],
             cacVanDeKhac: [null],
             moHinhKinhDoanhs: [],
             soLuongCuaHang: 0,
