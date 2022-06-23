@@ -1,0 +1,375 @@
+<div class="row" *ngIf="!isChild">
+    <div class="col-md-7 col-lg-9">
+        <nb-card>
+            <nb-accordion>
+                <nb-accordion-item>
+                    <nb-accordion-item-header>
+                        {{ 'LB.SEARCH.TIM_KIEM_NANG_CAO' | translate }}
+                    </nb-accordion-item-header>
+                    <nb-accordion-item-body>
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4 col-xxxl-4 mb-2">
+                                <naf-form-control [label]="'LB.SEARCH.TU_KHOA' | translate" [(ngModel)]="queryOptions.keyword"></naf-form-control>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="text-right">
+                                    <button class="mr-2" nbButton status="primary" size="small" (click)="onSearchChange()">
+                                        <i class="fa fa-search mr-2"></i> {{ 'LB.SEARCH.TIM_KIEM' | translate }}
+                                    </button>
+                                    <button class="mr-2" nbButton status="warning" size="small" (click)="resetHandler()">
+                                        <i class="fas fa-redo-alt mr-2"></i> {{ 'LB.SEARCH.LAM_MOI' | translate }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </nb-accordion-item-body>
+                </nb-accordion-item>
+            </nb-accordion>
+        </nb-card>
+    </div>
+    <div class="col-md-5 col-lg-3">
+        <nb-card>
+            <nb-card-body>
+                <nb-form-field>
+                    <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
+                    <input type="text" class="font-italic" nbInput fullWidth fieldSize="small" [placeholder]="'LB.SEARCH.TIM_KIEM_NHANH'| translate" (keyup.enter)="loadItems()" [(ngModel)]="queryOptions.keyword" />
+                </nb-form-field>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
+<nb-card>
+    <nb-card-header>
+        {{ 'LB.CAN.CA_NHAN' | translate }}
+        <button nbButton size="tiny" status="primary" class="float-right" (click)="setInfoTab()" [disabled]="selectionIds.length < 1">
+            <i class="fa fa-info"></i>
+        </button>
+    </nb-card-header>
+    <nb-card-body class="group-button">
+        <div class="float-left">
+            <button nbButton status="primary" size="small" (click)="addHandler()"><i class="fa fa-plus mr-2"></i> {{ 'LB.GRID.THEM_MOI' | translate }}</button>
+            <button nbButton status="danger" size="small" (click)="removeSelectedHandler()" [disabled]="selectionIds.length < 1">
+                <i class="fa fa-trash mr-2"></i> {{ 'LB.GRID.XOA' | translate }}
+            </button>
+        </div>
+    </nb-card-body>
+    <nb-card-body>
+        <div class="row">
+            <div [class]="colNameDefineClass">
+                <kendo-grid class="kendo_custom " [data]="gridData" [resizable]="true" [pageSize]="gridState.take" [skip]="gridState.skip" [loading]="isLoading" [pageable]="true" [resizable]="true" kendoGridSelectBy="id" [selectable]="true" [selectedKeys]="selectionIds"
+                    (selectionChange)="selectedRowChange($event)" (dataStateChange)="onStateChange($event)">
+                    <kendo-grid-checkbox-column class="text-center" showSelectAll="true" [width]="50" [columnMenu]="false" [headerStyle]="{'text-align': 'center'}">
+                    </kendo-grid-checkbox-column>
+                    <kendo-grid-column class="text-center" [width]="60">
+                        <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                            <button nbButton status="info" size="tiny" [matMenuTriggerFor]="menu">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item class="button_box" color="primary" (click)="editHandler(dataItem)">
+                                        <div class="box_botton">
+                                            <i class="fa fa-edit mr-2" style="width: 20px;"></i>{{ 'LB.GRID.CHINH_SUA' | translate }}
+                                        </div>
+                                    </button>
+                                <button mat-menu-item class="button_box" (click)="removeHandler(dataItem)">
+                                        <div class="box_botton">
+                                            <i class="fa fa-trash mr-2" style="width: 20px;"></i>{{ 'LB.GRID.XOA' | translate }}
+                                        </div>
+                                    </button>
+                            </mat-menu>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column [title]="'LB.GRID.RN' | translate" [width]="60" class="text-center" [headerStyle]="{
+                        'text-align': 'center'
+                        }">
+                        <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+                            {{ rowIndex + 1 }}
+                        </ng-template>
+                    </kendo-grid-column>
+
+                    <kendo-grid-column field="hoTen" class="kendo_title" [title]="'LB.CAN.NAME' | translate" [width]="150">
+                    </kendo-grid-column>
+                    <kendo-grid-column field="ngaySinh" class="kendo_title" [title]="'LB.CAN.NGAY_SINH' | translate" [width]="150" [headerStyle]="{
+                      'text-align': 'center'
+                      }">
+                        <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+                            <div class="text-center">
+                                {{dataItem.ngaySinh}}
+                            </div>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column field="tenGioiTinh" class="kendo_title" [title]="'LB.CAN.GIOI_TINH' | translate" [width]="100">
+                    </kendo-grid-column>
+                    <kendo-grid-column field="dienThoai" class="kendo_title" [title]="'LB.CAN.SDT' | translate" [width]="100" [headerStyle]="{
+                      'text-align': 'center'
+                      }">
+                        <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+                            <div class="text-center">
+                                {{dataItem.sdtNguoiLienHe}}
+                            </div>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column field="tenDoanhNghiep" class="kendo_title" [title]="'LB.DON.TEN_TO_CHUC' | translate" [width]="250">
+                    </kendo-grid-column>
+                    <ng-template kendoGridDetailTemplate let-dataItem>
+                        <div class="font-italic" *ngIf="dataItem.hoTen != null && dataItem.hoTen != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.NAME' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.hoTen }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.soCMND != null && dataItem.soCMND != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.CMND' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.soCMND }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.ngaySinh != null && dataItem.ngaySinh != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.NGAY_SINH' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.ngaySinh }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.tenGioiTinh != null && dataItem.tenGioiTinh != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.GIOI_TINH' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.tenGioiTinh }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.danToc != null && dataItem.danToc != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.DAN_TOC' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.danToc }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.tonGiao != null && dataItem.tonGiao != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.TON_GIAO' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.tonGiao }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.tenQuocTich != null && dataItem.tenQuocTich != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.QUOC_TICH' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.tenQuocTich }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.diaChi != null && dataItem.diaChi != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.DON.TEN_TO_CHUC' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.tenDoanhNghiep }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.namThanhLap != null && dataItem.namThanhLap != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.DON.NAM_THANH_LAP' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.namThanhLap }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.vonDieuLe != null && dataItem.vonDieuLe != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.DON.VON_DIEU_LE' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.vonDieuLe }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.nguoiLienHe != null && dataItem.nguoiLienHe != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.LIEN_HE' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.nguoiLienHe }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.chucVuNguoiLienHe != null && dataItem.chucVuNguoiLienHe != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.CHUC_VU' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.chucVuNguoiLienHe }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.sdtNguoiLienHe != null && dataItem.sdtNguoiLienHe != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.SDT' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.sdtNguoiLienHe }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-italic" *ngIf="dataItem.email != null && dataItem.email != ''">
+                            <div class="row">
+                                <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
+                                    <label class="col-form-label">  {{ 'LB.CAN.EMAIL' | translate }} </label>
+                                    <span class="float-right">:</span>
+                                </div>
+                                <div class="col-8 col-md-8 col-lg-9 col-xxxl-2">
+                                    <label class=" col-form-label lb-bold-info">
+                                        {{ dataItem?.email }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </kendo-grid>
+            </div>
+            <div class="col-3 col-lg-3 col-md-4 clsInfo" *ngIf="isInfoOpen && infoModel">
+                <nb-card status="info">
+                    <nb-card-header>
+                        <b>{{ 'LB.GRID.INFO' | translate }}</b>
+                    </nb-card-header>
+                    <nb-card-body>
+                        <div class="row mb-1 font-italic ng-star-inserted" *ngIf="infoModel.hoTen!= null && infoModel.hoTen != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.NAME' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.hoTen}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic ng-star-inserted" *ngIf="infoModel.soCMND!= null && infoModel.soCMND != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.CMND' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.soCMND}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic ng-star-inserted" *ngIf="infoModel.ngaySinh!= null && infoModel.ngaySinh != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.NGAY_SINH' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.ngaySinh}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.tenGioiTinh!= null && infoModel.tenGioiTinh != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.GIOI_TINH' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.tenGioiTinh}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.danToc!= null && infoModel.danToc != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.DAN_TOC' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.danToc}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.tonGiao!= null && infoModel.tonGiao != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.TON_GIAO' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.tonGiao}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.tenQuocTich!= null && infoModel.tenQuocTich != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.QUOC_TICH' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.tenQuocTich}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.tenDoanhNghiep!= null && infoModel.tenDoanhNghiep != ''">
+                            <div class="col-5"><b>{{ 'LB.DON.TEN_TO_CHUC' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.tenDoanhNghiep}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.namThanhLap!= null && infoModel.namThanhLap != ''">
+                            <div class="col-5"><b>{{ 'LB.DON.NAM_THANH_LAP' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.namThanhLap}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.tenQuanHuyen!= null && infoModel.tenQuanHuyen != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.QUAN_HUYEN' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.tenQuanHuyen}}</div>
+                        </div>
+
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.vonDieuLe!= null && infoModel.vonDieuLe != ''">
+                            <div class="col-5"><b>{{ 'LB.DON.VON_DIEU_LE' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.vonDieuLe}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.nguoiLienHe!= null && infoModel.nguoiLienHe != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.LIEN_HE' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.nguoiLienHe}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.chucVuNguoiLienHe!= null && infoModel.chucVuNguoiLienHe != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.CHUC_VU' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.chucVuNguoiLienHe}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.dienThoai!= null && infoModel.dienThoai != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.SDT' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.dienThoai}}</div>
+                        </div>
+                        <div class="row mb-1 font-italic" *ngIf="infoModel.email!= null && infoModel.email != ''">
+                            <div class="col-5"><b>{{ 'LB.CAN.EMAIL' | translate }}:</b></div>
+                            <div class="col-7 pl-0">{{infoModel.email}}</div>
+                        </div>
+                    </nb-card-body>
+                </nb-card>
+            </div>
+        </div>
+    </nb-card-body>
+</nb-card>

@@ -154,7 +154,11 @@
     "LB.CAN.YC_KHAC": "Yêu cầu về marketing &amp; các ghi chú khác",
     "LB.CAN.YC_THOI_GIAN_TK": "Yêu cầu về thời gian thiết kế/ thi công gian hàng",
     "LB.CAN.YC_THOI_GIAN_TKTB": "Thời gian thiết kế gian hàng trung bình",
-    "LB.CAN.YC_THOI_GIAN_TCTB": "Thời gian thi công gian hàng trung bình"
+    "LB.CAN.YC_THOI_GIAN_TCTB": "Thời gian thi công gian hàng trung bình",
 
+    "LB.DON.TEN_DOANH_NGHIEP": "Tên tổ chức/doanh nghiệp/công ty",
+    "LB.DON.NAM_THANH_LAP": "Năm thành lập",
+    "LB.DON.VON_DIEU_LE": "Vốn điều lệ",
+    "LB.DON.LOAI_HINH": "Là tổ chức/doanh nghiệp/công ty"
 
 }

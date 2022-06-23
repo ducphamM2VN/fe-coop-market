@@ -5,7 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { ApiService } from '../../services/api.service';
 import { SafeAny } from '../../utils/types';
 import { UrlModuleCategory } from './apis/api-list';
-import { CatDanToc, CatDoTuoi, CatGioiTinh, CatHanThiCOng, CatKhachHangMucTieu, CatLoaiTienTe, CatMucThuNhap, CatNganhHang, CatQuocTich, CatTonGiao } from './data-access/data-access.categories';
+import { CatDanToc, CatDoTuoi, CatGioiTinh, CatHanThiCOng, CatKhachHangMucTieu, CatLoaiTienTe, CatMucThuNhap, CatNganhHang, CatQuocTich, CatTonGiao,CatLoaiHinh } from './data-access/data-access.categories';
 import { DropDownListEnum } from './enums/naf-select.enum';
 
 @Component({
@@ -91,6 +91,9 @@ export class NafSelectComponent implements ControlValueAccessor {
                 break;
             case DropDownListEnum.HAN_THI_CONG:
                 this.loadHanThiCong()
+                break;
+            case DropDownListEnum.LOAI_HINH:
+                this.loadLoaiHinh()
                 break;
         }
     }
@@ -186,6 +189,14 @@ export class NafSelectComponent implements ControlValueAccessor {
     }
     loadHanThiCong() {
         this.lstData = CatHanThiCOng.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadLoaiHinh() {
+        this.lstData = CatLoaiHinh.map(item => {
             return {
                 id: item.id,
                 text: item.name

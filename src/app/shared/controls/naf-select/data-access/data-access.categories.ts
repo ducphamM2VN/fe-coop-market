@@ -138,6 +138,20 @@ export const CatHanThiCOng = [
     name: "15 ngày"
   },
 ]
+export const CatLoaiHinh = [
+  {
+    id: 1,
+    name: "Tổ chức"
+  },
+  {
+    id: 2,
+    name: "doanh nghiệp"
+  },
+  {
+    id: 3,
+    name: "Công ty"
+  }
+]
 
 
 
