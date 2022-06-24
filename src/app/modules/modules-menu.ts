@@ -11,15 +11,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
   // },
   {
     title: 'Đăng ký',
-    icon: 'book-outline',
+    icon: 'edit-2-outline',
     home: true,
-    children: [
-      {
-        title: 'Ngành hàng',
-        icon: 'archive-outline',
-        link: '/modules/module-dang-ky/nganh-hang',
-      },
-    ]
+    link: '/modules/module-dang-ky/nganh-hang',
   },
   {
     title: 'Khách hàng Cá nhân',

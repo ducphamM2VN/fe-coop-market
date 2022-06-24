@@ -6,11 +6,6 @@ const routes: Routes = [{
   path: '',
   component: ModulesComponent,
   children: [
-    // {
-    //   path: 'module-categories',
-    //   loadChildren: () => import('./module-categories/module-categories.module')
-    //     .then(m => m.ModuleCategoriesModule),
-    // },
     {
       path: 'module-dang-ky',
       loadChildren: () => import('./module-dang-ky/module-dang-ky.module')
@@ -28,7 +23,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'module-canhans',
+      redirectTo: 'module-dang-ky',
       pathMatch: 'full',
     },
   ],
