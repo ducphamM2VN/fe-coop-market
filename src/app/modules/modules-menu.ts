@@ -35,7 +35,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Khách hàng doanh nghiệp',
-    icon: 'people-outline',
+    icon: 'npm-outline',
     home: true,
     children: [
       {

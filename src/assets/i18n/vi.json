@@ -159,6 +159,8 @@
     "LB.DON.TEN_DOANH_NGHIEP": "Tên tổ chức/doanh nghiệp/công ty",
     "LB.DON.NAM_THANH_LAP": "Năm thành lập",
     "LB.DON.VON_DIEU_LE": "Vốn điều lệ",
-    "LB.DON.LOAI_HINH": "Là tổ chức/doanh nghiệp/công ty"
+    "LB.DON.LOAI_HINH": "Là tổ chức/doanh nghiệp/công ty",
+    "LB.DON.TEN_TO_CHUC": "Tổ chức",
+    "LB.DON.DOANH_NGHIEP": "Doanh nghiệp"
 
 }
