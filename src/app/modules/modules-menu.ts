@@ -33,4 +33,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ]
   },
+  {
+    title: 'Khách hàng doanh nghiệp',
+    icon: 'npm-outline',
+    home: true,
+    children: [
+      {
+        title: 'Quản lý thông tin đăng ký',
+        icon: 'monitor-outline',
+        link: '/modules/module-doanhnghieps/doanh-nghiep',
+      },
+    ]
+  },
 ];

@@ -1,0 +1,126 @@
+<nb-card>
+    <nb-card-body>
+        <form class="m-form" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+            <nb-tabset>
+                <nb-tab [tabTitle]="'LB.CAN.THONG_TIN_KHACH_HANG' | translate">
+                    <div class="row">
+                        <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                            <h5>{{'LB.CAN.TT_CHUNG' | translate}}</h5>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]=" 'LB.CAN.NAME' | translate" formControlName="hoTen"></naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]=" 'LB.CAN.CMND' | translate" formControlName="soCMND"></naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <label>{{'LB.CAN.CMND_HINH_ANH' | translate}}</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button nbButton size="small" fullWidth status="primary" type="button" class="mr-1">{{ 'LB.CAN.CMND_MAT_TRUOC' | translate }}</button>
+                                </div>
+                                <div class="col-6">
+                                    <button nbButton size="small" fullWidth status="primary" type="button">{{ 'LB.CAN.CMND_MAT_SAU' | translate }}</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <label class="w-100">{{ 'LB.CAN.GIOI_TINH' | translate }}</label>
+                            <nb-radio-group formControlName="gioiTinh" fullWidth>
+                                <nb-radio value="0">{{ 'LB.CAN.NAM' | translate }}</nb-radio>
+                                <nb-radio value="1">{{ 'LB.CAN.NU' | translate }}</nb-radio>
+                            </nb-radio-group>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]=" 'LB.CAN.NGAY_SINH' | translate" formControlName="ngaySinh" type="date"></naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <ngx-naf-select [label]="'LB.CAN.DAN_TOC' | translate" formControlName="idDanToc" [modeOfDropDownList]="dropdownListEnum.DAN_TOC">
+                            </ngx-naf-select>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <ngx-naf-select [label]="'LB.CAN.TON_GIAO' | translate" formControlName="idTonGiao" [modeOfDropDownList]="dropdownListEnum.TON_GIAO">
+                            </ngx-naf-select>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <ngx-naf-select [label]="'LB.CAN.QUOC_TICH' | translate" formControlName="idQuocTich" [modeOfDropDownList]="dropdownListEnum.QUOC_TICH">
+                            </ngx-naf-select>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]=" 'LB.DON.TEN_DOANH_NGHIEP' | translate" formControlName="tenDoanhNghiep"></naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <ngx-naf-select [label]="'LB.DON.LOAI_HINH' | translate" formControlName="idLoaiHinh" [modeOfDropDownList]="dropdownListEnum.LOAI_HINH">
+                            </ngx-naf-select>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]=" 'LB.DON.NAM_THANH_LAP' | translate" formControlName="namThanhLap" type="date"></naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]=" 'LB.DON.VON_DIEU_LE' | translate" formControlName="vonDieuLe"></naf-form-control>
+                        </div>
+
+                        <div class="form-group m-form__group col-md-12 col-lg-12 mb-2 mt-5">
+                            <h5>{{'LB.CAN.TT_LH' | translate}}</h5>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]="'LB.CAN.LIEN_HE' | translate" formControlName="nguoiLienHe">
+                            </naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]="'LB.CAN.CHUC_VU' | translate" formControlName="chucVu">
+                            </naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]="'LB.CAN.SDT' | translate" formControlName="dienThoai">
+                            </naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]="'LB.CAN.EMAIL' | translate" formControlName="email"></naf-form-control>
+                        </div>
+                    </div>
+                </nb-tab>
+                <nb-tab [tabTitle]="'LB.CAN.THONG_TIN_MHKD' | translate">
+                    <div class="form-group m-form__group col-md-2 col-lg-2 mb-2">
+                        <naf-form-control [label]="'LB.CAN.SLNH' | translate" type="number" min="0" formControlName="soLuongCuaHang" (ngModelChange)="updateSoLuongMoHinhKinhDoanh($event)"></naf-form-control>
+                    </div>
+                    <div class="row mt-3" *ngFor="let data of moHinhKinhDoanhs">
+                        <div class="col-12">
+                            <ngx-mo-hinh-kinh-doanh [moHinhKinhDoanhs]="data"></ngx-mo-hinh-kinh-doanh>
+                        </div>
+                    </div>
+                </nb-tab>
+                <nb-tab [tabTitle]="'LB.CAN.DE_NGHI_KINH_DOANH' | translate">
+                    <div class="row">
+                        <div class="form-group m-form__group col-md-12 col-lg-12 mb-2">
+                            <label>{{'LB.CAN.VTQT' | translate}}</label>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]="'LB.CAN.LIEN_HE' | translate" formControlName="nguoiLienHe">
+                            </naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]="'LB.CAN.CHUC_VU' | translate" formControlName="chucVu">
+                            </naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]="'LB.CAN.SDT' | translate" formControlName="dienThoai">
+                            </naf-form-control>
+                        </div>
+                        <div class="form-group m-form__group col-md-3 col-lg-3 mb-2">
+                            <naf-form-control [label]="'LB.CAN.EMAIL' | translate" formControlName="email"></naf-form-control>
+                        </div>
+                    </div>
+                </nb-tab>
+            </nb-tabset>
+            <div class="text-right border-form-footer m-5">
+                <button nbButton size="small" status="primary" type="button" class="btn_custom btn_df mr-1">{{ 'LB.ACTION.CANCEL' | translate }}</button>
+                <button nbButton size="small" status="warning" type="submit">{{ 'LB.ACTION.SAVE_LOCAL' |
+                  translate }}</button>
+                <button nbButton size="small" status="danger" type="submit" class="btn_custom btn_add">{{ 'LB.ACTION.SAVE' |
+                  translate }}</button>
+            </div>
+        </form>
+
+    </nb-card-body>
+</nb-card>

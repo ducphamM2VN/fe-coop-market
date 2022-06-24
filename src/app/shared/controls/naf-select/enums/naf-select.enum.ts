@@ -5,5 +5,12 @@ export enum DropDownListEnum {
     PHUONG_XA,
     TINH_THANH_PHO,
     TON_GIAO,
-    QUOC_TICH
+    QUOC_TICH,
+    NGANH_HANG,
+    DO_TUOI,
+    KHACH_HANG,
+    THU_NHAP,
+    TIEN_TE,
+    HAN_THI_CONG,
+    LOAI_HINH
 }

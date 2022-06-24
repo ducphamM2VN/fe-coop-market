@@ -11,8 +11,10 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import localeVN from '@angular/common/locales/vi';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeVN);
 import {
-  NbChatModule,
   NbDatepickerModule,
   NbDialogModule,
   NbMenuModule,
@@ -24,7 +26,7 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MessageService } from '@progress/kendo-angular-l10n';
 import { MessageKendoService } from '../environments/global-handler/message-kendo.service';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -33,6 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    SlickCarouselModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
@@ -42,9 +45,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
-    NbChatModule.forRoot({
-      messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
-    }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
     HttpClientModule,
@@ -54,7 +54,7 @@ export function HttpLoaderFactory(http: HttpClient) {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-  })
+  }),
   ],
   providers: [
       { provide: MessageService, useClass: MessageKendoService },

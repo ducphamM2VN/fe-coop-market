@@ -3,16 +3,16 @@ import { Validators } from "@angular/forms";
 import { ActionEnum } from "../../../../../constants/enum.constant";
 import { UrlModuleCaNhans } from "../../../data-access/apis/api-list";
 import { BaseCaNhansFormComponent } from "../../../data-access/base/base-components-form.component";
-import { ICaNhans } from "../../../data-access/models/canhan.model";
+import { ICaNhans, IMoHinhKinhDoanh } from "../../../data-access/models/canhan.model";
 
 @Component({
     selector: "ngx-form-ca-nhan",
     templateUrl: "./form-ca-nhan.component.html",
 })
 export class FormCaNhanComponent extends BaseCaNhansFormComponent<ICaNhans> implements OnInit {
-    loadItem(): void { }
     url: String = UrlModuleCaNhans.ROUTE_CANHANS.CA_NHAN;
-
+    moHinhKinhDoanhs: IMoHinhKinhDoanh[] = []
+    soLuongCuaHang: number = 0
     constructor(injector: Injector) {
         super(injector);
     }
@@ -23,7 +23,7 @@ export class FormCaNhanComponent extends BaseCaNhansFormComponent<ICaNhans> impl
             case ActionEnum.CREATE:
                 break;
             case ActionEnum.UPDATE:
-                this.setFormValue(this.model);
+                this.form.patchValue(this.model);
                 break;
         }
     }
@@ -48,8 +48,10 @@ export class FormCaNhanComponent extends BaseCaNhansFormComponent<ICaNhans> impl
             dienTich: [null, Validators.required],
             giaThueDeNghi: [null, Validators.required],
             tenTienTe: [null, Validators.required],
-            thoiGianMo: [null, Validators.required],
+            thoiGianMo: [null],
             cacVanDeKhac: [null],
+            moHinhKinhDoanhs: [],
+            soLuongCuaHang: 0,
         });
     }
 
@@ -65,5 +67,46 @@ export class FormCaNhanComponent extends BaseCaNhansFormComponent<ICaNhans> impl
         this.form.get('idPhuongXa').setValue = data.idPhuongXa
 
         console.log(this.form.value)
+    }
+    protected showFormCreateOrUpdate(): void {
+    }
+    protected loadItems(): void {
+    }
+    updateSoLuongMoHinhKinhDoanh(data) {
+      this.moHinhKinhDoanhs = []
+      for (let i = 1; i <= data; i++) {
+          this.moHinhKinhDoanhs.push({
+              id: 0,
+              idNganhHang: 0,
+              thuongHieu: null,
+              idDoTuoi: 0,
+              idDoiTuongKhachHang: 0,
+              idThuNhap: 0,
+              giaTrungBinhTu: null,
+              giaTrungBinhDen: null,
+              idXuatXu: 0,
+              noiBatkhacBiet: null,
+              idHoSoLoaiHinh: 0,
+              idHoSoXuatXu: 0,
+              idHoSoChungMinhNhapKhau: 0,
+              doanhThuTrungBinhTu: null,
+              doanhThuTrungBinhDen: null,
+              dienTichToiThieu: null,
+              dienTichToiDa: null,
+              dacDiemViTri: null,
+              kieuGianHang: null,
+              giaThueChapNhan: null,
+              idTienTe: 0,
+              idViTriCuahang: 0,
+              soLuongCuaHang: null,
+              cuaHangDaCo: null,
+              cuaHangDuKien: null,
+              viTriQuanTamMoCuaHang: null,
+              yeuCauDatBiet: null,
+              idThoiGianThietKeTB: 0,
+              idThoiGianThiCongTB: null,
+              yeuCauMarketing: null
+          })
+        }
     }
 }

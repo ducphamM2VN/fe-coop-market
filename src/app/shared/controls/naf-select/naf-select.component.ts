@@ -5,7 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { ApiService } from '../../services/api.service';
 import { SafeAny } from '../../utils/types';
 import { UrlModuleCategory } from './apis/api-list';
-import { CatDanToc, CatGioiTinh, CatQuocTich, CatTonGiao } from './data-access/data-access.categories';
+import { CatDanToc, CatDoTuoi, CatGioiTinh, CatHanThiCOng, CatKhachHangMucTieu, CatLoaiTienTe, CatMucThuNhap, CatNganhHang, CatQuocTich, CatTonGiao,CatLoaiHinh } from './data-access/data-access.categories';
 import { DropDownListEnum } from './enums/naf-select.enum';
 
 @Component({
@@ -74,6 +74,27 @@ export class NafSelectComponent implements ControlValueAccessor {
             case DropDownListEnum.QUOC_TICH:
                 this.loadQuocTich()
                 break;
+            case DropDownListEnum.NGANH_HANG:
+                this.loadNganhHang()
+                break;
+            case DropDownListEnum.DO_TUOI:
+                this.loadDoTuoi()
+                break;
+            case DropDownListEnum.KHACH_HANG:
+                this.loadKhachHang()
+                break;
+            case DropDownListEnum.THU_NHAP:
+                this.loadThuNhap()
+                break;
+            case DropDownListEnum.TIEN_TE:
+                this.loadTienTe()
+                break;
+            case DropDownListEnum.HAN_THI_CONG:
+                this.loadHanThiCong()
+                break;
+            case DropDownListEnum.LOAI_HINH:
+                this.loadLoaiHinh()
+                break;
         }
     }
 
@@ -120,6 +141,62 @@ export class NafSelectComponent implements ControlValueAccessor {
     }
     loadQuocTich() {
         this.lstData = CatQuocTich.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadNganhHang() {
+        this.lstData = CatNganhHang.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadDoTuoi() {
+        this.lstData = CatDoTuoi.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadKhachHang() {
+        this.lstData = CatKhachHangMucTieu.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadThuNhap() {
+        this.lstData = CatMucThuNhap.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadTienTe() {
+        this.lstData = CatLoaiTienTe.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadHanThiCong() {
+        this.lstData = CatHanThiCOng.map(item => {
+            return {
+                id: item.id,
+                text: item.name
+            }
+        })
+    }
+    loadLoaiHinh() {
+        this.lstData = CatLoaiHinh.map(item => {
             return {
                 id: item.id,
                 text: item.name

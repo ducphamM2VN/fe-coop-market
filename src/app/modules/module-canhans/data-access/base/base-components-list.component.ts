@@ -14,6 +14,7 @@ import { PageConfig } from '../../../../constants/app.constant';
 import { Subject } from 'rxjs';
 import { AlertDialogComponent } from '../../../../shared/controls/alert-dialog/alert-dialog.component';
 import { SelectionEvent } from '@progress/kendo-angular-grid';
+import { Router } from '@angular/router';
 
 @Directive()
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
@@ -23,6 +24,7 @@ export abstract class BaseCaNhansListComponent<T> extends BaseListComponent<T> {
     protected notification: NotificationService;
     protected modal: NbDialogService;
     protected translate: CustomTranslateService;
+    protected router: Router;
 
     constructor(injector: Injector) {
         super(injector);
@@ -31,6 +33,7 @@ export abstract class BaseCaNhansListComponent<T> extends BaseListComponent<T> {
         this.notification = injector.get(NotificationService);
         this.modal = injector.get(NbDialogService);
         this.translate = injector.get(CustomTranslateService);
+        this.router = injector.get(Router)
     }
 
     culturesEnum = CulturesEnum;
