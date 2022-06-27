@@ -115,7 +115,7 @@
                     <kendo-grid-column field="diaChi" class="kendo_title" [title]="'LB.CAN.DIA_CHI' | translate" [width]="250">
                     </kendo-grid-column>
                     <ng-template kendoGridDetailTemplate let-dataItem>
-                        <div class="font-italic bg_table" *ngIf="dataItem.hoTen != null && dataItem.hoTen != ''">
+                        <div class="row font-italic" *ngIf="dataItem.hoTen != null && dataItem.hoTen != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.NAME' | translate }} </label>
@@ -128,7 +128,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic bg_table" *ngIf="dataItem.soCMND != null && dataItem.soCMND != ''">
+                        <div class="row font-italic" *ngIf="dataItem.soCMND != null && dataItem.soCMND != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.CMND' | translate }} </label>
@@ -141,7 +141,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic bg_table" *ngIf="dataItem.ngaySinh != null && dataItem.ngaySinh != ''">
+                        <div class="row font-italic" *ngIf="dataItem.ngaySinh != null && dataItem.ngaySinh != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.NGAY_SINH' | translate }} </label>
@@ -154,7 +154,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic bg_table" *ngIf="dataItem.tenGioiTinh != null && dataItem.tenGioiTinh != ''">
+                        <div class="row font-italic" *ngIf="dataItem.tenGioiTinh != null && dataItem.tenGioiTinh != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.GIOI_TINH' | translate }} </label>
@@ -167,7 +167,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic bg_table" *ngIf="dataItem.danToc != null && dataItem.danToc != ''">
+                        <div class="row font-italic" *ngIf="dataItem.danToc != null && dataItem.danToc != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.DAN_TOC' | translate }} </label>
@@ -180,7 +180,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic bg_table" *ngIf="dataItem.tonGiao != null && dataItem.tonGiao != ''">
+                        <div class="row font-italic" *ngIf="dataItem.tonGiao != null && dataItem.tonGiao != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.TON_GIAO' | translate }} </label>
@@ -193,7 +193,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic bg_table" *ngIf="dataItem.tenQuocTich != null && dataItem.tenQuocTich != ''">
+                        <div class="row font-italic" *ngIf="dataItem.tenQuocTich != null && dataItem.tenQuocTich != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.QUOC_TICH' | translate }} </label>
@@ -206,7 +206,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic bg_table" *ngIf="dataItem.diaChi != null && dataItem.diaChi != ''">
+                        <div class="row font-italic" *ngIf="dataItem.diaChi != null && dataItem.diaChi != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.DIA_CHI' | translate }} </label>
@@ -219,7 +219,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.tenPhuongXa != null && dataItem.tenPhuongXa != ''">
+                        <div class="row font-italic" *ngIf="dataItem.tenPhuongXa != null && dataItem.tenPhuongXa != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.PHUONG_XA' | translate }} </label>
@@ -232,7 +232,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.tenQuanHuyen != null && dataItem.tenQuanHuyen != ''">
+                        <div class="row font-italic" *ngIf="dataItem.tenQuanHuyen != null && dataItem.tenQuanHuyen != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.QUAN_HUYEN' | translate }} </label>
@@ -245,7 +245,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.tenTinhThanh != null && dataItem.tenTinhThanh != ''">
+                        <div class="row font-italic" *ngIf="dataItem.tenTinhThanh != null && dataItem.tenTinhThanh != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.TINH_THANH' | translate }} </label>
@@ -258,7 +258,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.nguoiLienHe != null && dataItem.nguoiLienHe != ''">
+                        <div class="row font-italic" *ngIf="dataItem.nguoiLienHe != null && dataItem.nguoiLienHe != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.LIEN_HE' | translate }} </label>
@@ -271,7 +271,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.dienThoai != null && dataItem.dienThoai != ''">
+                        <div class="row font-italic" *ngIf="dataItem.dienThoai != null && dataItem.dienThoai != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.SDT' | translate }} </label>
@@ -284,7 +284,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.email != null && dataItem.email != ''">
+                        <div class="row font-italic" *ngIf="dataItem.email != null && dataItem.email != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.EMAIL' | translate }} </label>
@@ -297,7 +297,7 @@
                             </div>
 
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.chucVu != null && dataItem.chucVu != ''">
+                        <div class="row font-italic" *ngIf="dataItem.chucVu != null && dataItem.chucVu != ''">
 
                             <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                 <label class="col-form-label">  {{ 'LB.CAN.CHUC_VU' | translate }} </label>
@@ -313,7 +313,7 @@
                     </ng-template>
                 </kendo-grid>
             </div>
-            <div class="col-3 col-lg-3 col-md-4 clsInfo" *ngIf="isInfoOpen && infoModel">
+            <div class="col-3 col-lg-3 col-md-5 clsInfo" *ngIf="isInfoOpen && infoModel">
                 <nb-card status="info">
                     <nb-card-header>
                         <b>{{ 'LB.GRID.INFO' | translate }}</b>

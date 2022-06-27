@@ -1192,3 +1192,20 @@ nb-radio.status-basic {
   width: fit-content;
   display: inline-block;
 }
+
+.nb-theme-cosmic nb-card.status-info nb-card-header {
+  background: #222C45 !important;
+  font-size: 1rem !important;
+}
+.nb-theme-cosmic nb-card.status-info nb-card-header {
+  font-size: 0.9rem !important;
+  background-color: #0095ff;
+  border-bottom-width: 0;
+  border-bottom-color: #0095ff;
+  color: #ffffff;
+  padding: 5px 20px 5px;
+  height: 40px !important;
+}
+.nb-theme-cosmic nb-card.status-info nb-card-body {
+  font-size: 0.8rem !important;
+}

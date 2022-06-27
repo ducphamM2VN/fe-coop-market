@@ -115,7 +115,7 @@
                     <kendo-grid-column field="tenDoanhNghiep" class="kendo_title" [title]="'LB.DON.TEN_TO_CHUC' | translate" [width]="250">
                     </kendo-grid-column>
                     <ng-template kendoGridDetailTemplate let-dataItem>
-                        <div class="font-italic" *ngIf="dataItem.hoTen != null && dataItem.hoTen != ''">
+                        <div class="row font-italic" *ngIf="dataItem.hoTen != null && dataItem.hoTen != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.NAME' | translate }} </label>
@@ -128,7 +128,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.soCMND != null && dataItem.soCMND != ''">
+                        <div class="row font-italic" *ngIf="dataItem.soCMND != null && dataItem.soCMND != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.CMND' | translate }} </label>
@@ -141,7 +141,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.ngaySinh != null && dataItem.ngaySinh != ''">
+                        <div class="row font-italic" *ngIf="dataItem.ngaySinh != null && dataItem.ngaySinh != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.NGAY_SINH' | translate }} </label>
@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.tenGioiTinh != null && dataItem.tenGioiTinh != ''">
+                        <div class="row font-italic" *ngIf="dataItem.tenGioiTinh != null && dataItem.tenGioiTinh != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.GIOI_TINH' | translate }} </label>
@@ -167,7 +167,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.danToc != null && dataItem.danToc != ''">
+                        <div class="row font-italic" *ngIf="dataItem.danToc != null && dataItem.danToc != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.DAN_TOC' | translate }} </label>
@@ -180,7 +180,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.tonGiao != null && dataItem.tonGiao != ''">
+                        <div class="row font-italic" *ngIf="dataItem.tonGiao != null && dataItem.tonGiao != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.TON_GIAO' | translate }} </label>
@@ -193,7 +193,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.tenQuocTich != null && dataItem.tenQuocTich != ''">
+                        <div class="row font-italic" *ngIf="dataItem.tenQuocTich != null && dataItem.tenQuocTich != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.QUOC_TICH' | translate }} </label>
@@ -206,7 +206,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.diaChi != null && dataItem.diaChi != ''">
+                        <div class="row font-italic" *ngIf="dataItem.diaChi != null && dataItem.diaChi != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.DON.TEN_TO_CHUC' | translate }} </label>
@@ -219,7 +219,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.namThanhLap != null && dataItem.namThanhLap != ''">
+                        <div class="row font-italic" *ngIf="dataItem.namThanhLap != null && dataItem.namThanhLap != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.DON.NAM_THANH_LAP' | translate }} </label>
@@ -232,7 +232,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.vonDieuLe != null && dataItem.vonDieuLe != ''">
+                        <div class="row font-italic" *ngIf="dataItem.vonDieuLe != null && dataItem.vonDieuLe != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.DON.VON_DIEU_LE' | translate }} </label>
@@ -245,7 +245,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.nguoiLienHe != null && dataItem.nguoiLienHe != ''">
+                        <div class="row font-italic" *ngIf="dataItem.nguoiLienHe != null && dataItem.nguoiLienHe != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.LIEN_HE' | translate }} </label>
@@ -258,7 +258,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.chucVuNguoiLienHe != null && dataItem.chucVuNguoiLienHe != ''">
+                        <div class="row font-italic" *ngIf="dataItem.chucVuNguoiLienHe != null && dataItem.chucVuNguoiLienHe != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.CHUC_VU' | translate }} </label>
@@ -271,7 +271,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.sdtNguoiLienHe != null && dataItem.sdtNguoiLienHe != ''">
+                        <div class="row font-italic" *ngIf="dataItem.sdtNguoiLienHe != null && dataItem.sdtNguoiLienHe != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.SDT' | translate }} </label>
@@ -284,7 +284,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-italic" *ngIf="dataItem.email != null && dataItem.email != ''">
+                        <div class="row font-italic" *ngIf="dataItem.email != null && dataItem.email != ''">
                             <div class="row">
                                 <div class="col-4 col-md-4 col-lg-3 col-xxxl-2 float-left custom_table">
                                     <label class="col-form-label">  {{ 'LB.CAN.EMAIL' | translate }} </label>

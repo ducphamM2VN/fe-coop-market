@@ -36043,6 +36043,35 @@ input[type="radio"], input[type="checkbox"] {
     color: white !important;
 }
 
+.nb-theme-cosmic .k-grid thead, .k-grid tfoot {
+  background: #323258 !important;
+  color: white !important;
+}
+.nb-theme-cosmic tr.k-master-row.ng-star-inserted {
+  background: #222C45 !important;
+  color: white !important;
+
+}
+.nb-theme-cosmic tr.k-alt.k-master-row.ng-star-inserted {
+  background: #192138 !important;
+  color: white !important;
+}
+.nb-theme-cosmic td.k-hierarchy-cell.ng-star-inserted {
+  background: #222C45 !important;
+  color: white !important;
+}
+.nb-theme-cosmic a.k-icon.k-plus.ng-star-inserted {
+  color: white !important;
+}
+.nb-theme-cosmic kendo-pager.k-pager-wrap.k-grid-pager.k-widget.ng-star-inserted {
+  background: #222C45 !important;
+  border: 1px solid white !important;
+  color: white !important;
+}
+.nb-theme-cosmic .k-pager-numbers .k-link.k-state-selected {
+  color: white !important;
+  background-color: #3366FF !important;
+}
 .k-grid-header-wrap {
     border-top-left-radius: 5px !important;
     border-top-right-radius: 5px !important;
@@ -36053,12 +36082,36 @@ kendo-grid.kendo_custom.k-widget.k-grid {
 kendo-pager.k-pager-wrap.k-grid-pager.k-widget.ng-star-inserted {
     border-radius: 5px !important;
 }
+.nb-theme-cosmic .k-grid .k-detail-row .k-detail-cell {
+  color: white !important;
+  background-color: #192138 !important;
+}
+.nb-theme-cosmic .k-grid td:first-child {
+  border-left-width: 0;
+  background-color: #192138 !important;
+}
 
+.nb-theme-cosmic kendo-grid.kendo_custom.k-widget.k-grid {
+  border: 1px solid #161A2F;
+  border-radius: unset !important;
+}
 ::-webkit-scrollbar {
     height: 0.25rem !important;
     width: 0.25rem !important;
 }
-
+.nb-theme-cosmic kendo-grid.kendo_custom.k-widget.k-grid {
+  border-radius: unset !important;
+}
+.nb-theme-cosmic kendo-pager.k-pager-wrap.k-grid-pager.k-widget.ng-star-inserted {
+  border: none !important;
+  border-radius: unset !important;
+}
 td.kendo_title.ng-star-inserted {
     padding: 5px 10px 5px 10px !important;
+}
+.nb-theme-cosmic .k-card > .k-card-inner {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: inherit;
+  overflow: hidden;
 }
